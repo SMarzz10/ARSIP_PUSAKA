@@ -276,7 +276,7 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   position: relative;
   overflow: hidden;
   isolation: isolate;
-  min-height: max(590px, calc(100svh - 78px));
+  min-height: 100svh;
   color: var(--paper);
   background: var(--ink);
 }
@@ -298,7 +298,7 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(to bottom, transparent 72%, rgba(244, 240, 231, 0.56) 90%, var(--paper) 100%),
+    linear-gradient(to bottom, transparent 86%, rgba(244, 240, 231, 0.56) 96%, var(--paper) 100%),
     linear-gradient(90deg, rgba(16, 35, 31, 0.94) 0%, rgba(16, 35, 31, 0.82) 42%, rgba(16, 35, 31, 0.28) 100%),
     linear-gradient(0deg, rgba(16, 35, 31, 0.32), transparent 36%);
   content: "";
@@ -313,8 +313,7 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   height: 100%;
   max-width: none;
   object-fit: cover;
-  background: #10231f;
-  transform: translate(-50%, -50%) scale(1.06);
+  transform: translate(-50%, -50%);
 }
 
 .hero::after {
@@ -338,7 +337,7 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   grid-template-columns: minmax(0, 1fr);
   align-items: center;
   margin-inline: auto;
-  padding-block: clamp(68px, 9vw, 120px);
+  padding-block: clamp(104px, 16svh, 176px) 120px;
 }
 
 .hero__copy {
@@ -351,7 +350,7 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   position: absolute;
   z-index: 2;
   right: var(--page-gutter);
-  bottom: 22px;
+  top: 98px;
   display: inline-flex;
   min-width: 112px;
   min-height: 44px;
@@ -1882,7 +1881,7 @@ dialog::backdrop {
 
   .hero__inner {
     min-height: inherit;
-    padding-block: 56px 82px;
+    padding-block: 88px 92px;
   }
 
   .hero__title {
@@ -1892,7 +1891,7 @@ dialog::backdrop {
 
   .hero__video-toggle {
     right: var(--page-gutter);
-    bottom: max(16px, env(safe-area-inset-bottom));
+    top: max(86px, calc(env(safe-area-inset-top) + 76px));
   }
 
   .page-hero__inner {
