@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#182d2a">
+  <meta name="description" content="Baca cerita rakyat Nusantara dalam babak singkat dan jelajahi variasi tradisi tutur.">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Cerita Nusantara — Arsip Pusaka</title>
+</head>
+<body data-page="cerita">
+  <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <div id="site-header"></div>
+  <main id="konten">
+    <header class="page-hero">
+      <div class="page-hero__inner">
+        <h1 class="page-hero__title">Diwariskan lewat tutur, <em>dijaga lewat cerita.</em></h1>
+        <p class="page-hero__lead">Legenda, mitos, dongeng, dan fabel dibaca perlahan, satu babak setiap kali.</p>
+        <div class="page-hero__meta"><span>9 versi demo ringkas</span><span>4 babak per cerita</span><span>Penanda baca tersimpan lokal</span></div>
+        <div class="hero__actions"><button class="button button--gold" id="random-story" type="button">↻ Cerita acak hari ini</button></div>
+      </div>
+    </header>
+    <section class="page-main">
+      <div class="shell">
+        <div class="content-toolbar">
+          <label class="search-field"><span class="screen-reader-only">Cari judul, daerah, atau jenis cerita</span><input id="story-search" type="search" placeholder="Cari judul atau daerah…" autocomplete="off"></label>
+          <label class="field"><span class="screen-reader-only">Pilih daerah</span><select id="story-region"><option>Semua daerah</option><option>Sumatera Barat</option><option>Jawa Barat</option><option>Jawa Tengah</option><option>Jawa Tengah &amp; DIY</option><option>Sumatera Utara</option><option>Kalimantan Barat</option><option>Nusantara</option></select></label>
+        </div>
+        <div class="filter-list" aria-label="Filter jenis cerita">
+          <button class="filter-button" type="button" data-story-type="Semua" aria-pressed="true">Semua</button>
+          <button class="filter-button" type="button" data-story-type="Legenda" aria-pressed="false">Legenda</button>
+          <button class="filter-button" type="button" data-story-type="Mitos" aria-pressed="false">Mitos</button>
+          <button class="filter-button" type="button" data-story-type="Dongeng" aria-pressed="false">Dongeng</button>
+          <button class="filter-button" type="button" data-story-type="Fabel" aria-pressed="false">Fabel</button>
+        </div>
+        <div class="section-heading section-heading--story"><h2 id="story-count">9 cerita</h2><p>Gunakan pencarian, jenis, dan daerah untuk menemukan cerita.</p></div>
+        <div id="story-list" class="story-grid" aria-live="polite"></div>
+        <div id="story-empty" class="empty-state" hidden><h3>Belum ada cerita yang cocok.</h3><p>Ubah kata pencarian atau pilih kategori dan daerah lain.</p></div>
+        <aside class="callout story-callout">
+          <div><h2>Cerita memiliki banyak suara.</h2><p>Setiap bacaan di sini adalah versi demo yang ditulis ringkas untuk prototipe, bukan naskah otoritatif. Sumber spesifik dan narasumber perlu diverifikasi serta diberi izin sebelum publikasi.</p></div>
+          <a class="button button--gold" href="../arsip/index.html">Ceritakan versi daerahmu →</a>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <dialog id="story-reader" aria-labelledby="reader-title">
+    <div class="dialog__inner">
+      <div class="dialog__head"><div><span class="reader-position" id="reader-position"></span><h2 id="reader-title"></h2><p class="field__hint" id="reader-type"></p></div><button class="dialog__close" type="button" id="reader-close" aria-label="Tutup cerita">×</button></div>
+      <progress id="reader-progress" class="quiz-progress" max="4" value="1" aria-label="Kemajuan babak cerita"></progress>
+      <div id="story-stage" class="story-reader__stage">
+        <div id="reader-stage" class="story-reader__art" aria-label="Ilustrasi tipografi dekoratif"><span id="reader-letter" aria-hidden="true">C</span></div>
+        <article class="story-reader__copy"><p id="reader-chapter" tabindex="-1"></p></article>
+      </div>
+      <section id="reader-meaning" hidden aria-labelledby="meaning-title">
+        <h3 id="meaning-title">Pesan dan makna budaya</h3>
+        <p id="reader-meaning-text"></p>
+        <h3>Catatan sumber</h3>
+        <ul id="reader-sources"></ul>
+        <p class="field__hint">Rujukan cerita pada kartu ini masih berupa catatan editorial yang perlu diverifikasi; jangan diperlakukan sebagai sumber final.</p>
+        <div class="form-actions"><a class="button button--gold" href="../arsip/index.html">Ceritakan versi daerahmu</a><a class="button button--quiet" href="../kuis/index.html">Uji pengetahuanmu</a></div>
+      </section>
+      <div class="reader-controls">
+        <button class="button button--quiet" id="reader-back" type="button">← Babak sebelumnya</button>
+        <button class="button" id="reader-next" type="button">Babak berikutnya →</button>
+        <button class="button button--gold" id="reader-finish" type="button" hidden>Tandai selesai dibaca</button>
+      </div>
+      <p class="field__hint">Geser kiri/kanan atau gunakan tombol panah untuk berpindah babak.</p>
+    </div>
+  </dialog>
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+  <div id="site-toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/cerita.js" defer></script>
+</body>
+</html>

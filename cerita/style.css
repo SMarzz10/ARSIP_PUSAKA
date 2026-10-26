@@ -1,0 +1,1726 @@
+.desktop-5,
+.desktop-5 * {
+  box-sizing: border-box;
+}
+.desktop-5 {
+  background: #f4f0e7;
+  height: 2221px;
+  position: relative;
+  overflow: hidden;
+}
+.frame {
+  background: var(--color-cyan-14, #182d2a);
+  padding: 100px 83.66px 70px 83.66px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-spacing-232, 23.2px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1440px;
+  min-height: var(--height-460, 460px);
+  position: absolute;
+  left: 0px;
+  top: 82px;
+  overflow: hidden;
+}
+.container {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.cerita-nusantara {
+  color: var(--color-orange-53, #d9a634);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-bold-upper-font-family,
+    "DmSans-Bold",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-bold-upper-font-size, 10px);
+  line-height: var(--wwwfigmacom-dm-sans-bold-upper-line-height, 15px);
+  letter-spacing: var(--wwwfigmacom-dm-sans-bold-upper-letter-spacing, 1.9px);
+  font-weight: var(--wwwfigmacom-dm-sans-bold-upper-font-weight, 700);
+  text-transform: uppercase;
+  position: relative;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.heading-1 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  max-width: var(--width-950, 950px);
+  position: relative;
+}
+.diwariskan-lewat-tutur-dijaga-lewat-cerita {
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-1-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(
+    --wwwfigmacom-semantic-heading-1-font-size,
+    83.69999694824219px
+  );
+  line-height: var(--wwwfigmacom-semantic-heading-1-line-height, 73.62px);
+  letter-spacing: var(--wwwfigmacom-semantic-heading-1-letter-spacing, -3.77px);
+  font-weight: var(--wwwfigmacom-semantic-heading-1-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.diwariskan-lewat-tutur-dijaga-lewat-cerita-span {
+  color: var(--color-grey-93, #f4f0e7);
+}
+.diwariskan-lewat-tutur-dijaga-lewat-cerita-span2 {
+  color: var(--color-orange-53, #d9a634);
+}
+.container2 {
+  padding: 0.8px 0px 6.8px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  max-width: var(--width-600, 600px);
+  position: relative;
+}
+.legenda-mitos-dan-dongeng-dari-berbagai-penjuru-dibaca-perlahan-satu-babak-setiap-kali {
+  color: var(--color-grey-81, #cad1cd);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 16px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 27.2px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button {
+  border-style: solid;
+  border-color: var(--color-white-40, rgba(255, 255, 255, 0.4));
+  border-width: 1px;
+  padding: 11.8px 17.8px 11.8px 17.8px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--item-spacing-xs, 8px);
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.component-1 {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  overflow: visible;
+}
+.cerita-acak-hari-ini {
+  color: var(--color-white-solid, #ffffff);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 16px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 24px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.border {
+  border-radius: var(--corner-radius-225, 225px);
+  border-style: solid;
+  border-color: var(--color-grey-93-7, rgba(244, 240, 231, 0.07));
+  border-width: 80px;
+  flex-shrink: 0;
+  width: 450px;
+  height: 450px;
+  position: absolute;
+  left: 646.34px;
+  top: -150px;
+}
+.frame2 {
+  padding: 70px 83.66px 110px 83.66px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-spacing-35, 35px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1440px;
+  height: 226px;
+  max-width: var(--width-1440, 1440px);
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  top: calc(50% - 516.5px);
+}
+.container3 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.label {
+  border-style: solid;
+  border-color: var(--color-cyan-14, #182d2a);
+  border-width: 0px 0px 0.8px 0px;
+  padding: 8px 0px 8px 0px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--item-spacing-10, 10px);
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  width: 400px;
+  position: relative;
+}
+.component-12 {
+  flex-shrink: 0;
+  width: 18.58px;
+  height: 20.01px;
+  position: relative;
+  overflow: visible;
+}
+.input {
+  padding: 1.6px 0px 1.6px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+}
+.container4 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+  overflow: hidden;
+}
+.cari-judul-atau-daerah {
+  color: var(--color-cyan-14-50, rgba(24, 45, 42, 0.5));
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-input-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-input-font-size, 16px);
+  font-weight: var(--wwwfigmacom-semantic-input-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.margin {
+  padding: 0px 0px 34px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.container5 {
+  display: flex;
+  flex-direction: row;
+  gap: var(--item-spacing-7, 7px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.button2 {
+  background: var(--color-cyan-14, #182d2a);
+  border-radius: var(--corner-radius-30, 30px);
+  border-style: solid;
+  border-color: var(--color-cyan-14, #182d2a);
+  border-width: 1px;
+  padding: 8.8px 13.8px 8.8px 13.8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.semua {
+  color: var(--color-white-solid, #ffffff);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 11px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 16.5px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button3 {
+  border-radius: var(--corner-radius-30, 30px);
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 1px;
+  padding: 8.8px 13.8px 8.8px 13.8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.legenda {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 11px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 16.5px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mitos {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 11px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 16.5px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dongeng {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 11px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 16.5px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fabel {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 11px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 16.5px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container6 {
+  display: grid;
+  gap: 22px;
+  position: absolute;
+  left: 83px;
+  top: 823px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: 457.4px 457.4px;
+}
+.article {
+  background: var(--color-grey-96-2, #faf7ef);
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+.background {
+  background: var(--color-red-46, #b95131);
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+.border2 {
+  border-style: solid;
+  border-color: var(--color-orange-87-4, #f6e7c7);
+  border-width: 29px;
+  opacity: 0.23;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 10px;
+  top: -117.28px;
+  transform-origin: 0 0;
+  transform: rotate(45deg) scale(1, 1);
+}
+.m {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-libre-caslon-display-regular-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-libre-caslon-display-regular-font-size, 100px);
+  line-height: var(
+    --wwwfigmacom-libre-caslon-display-regular-line-height,
+    150px
+  );
+  font-weight: var(--wwwfigmacom-libre-caslon-display-regular-font-weight, 400);
+  opacity: 0.8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.border3 {
+  border-style: solid;
+  border-color: var(--color-orange-87-4, #f6e7c7);
+  border-width: 29px;
+  opacity: 0.23;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 311.29px;
+  top: 92.72px;
+  transform-origin: 0 0;
+  transform: rotate(45deg) scale(1, 1);
+}
+.sumatera-barat {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-upper-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-upper-line-height, 12px);
+  letter-spacing: var(
+    --wwwfigmacom-dm-sans-regular-upper-letter-spacing,
+    1.2px
+  );
+  font-weight: var(--wwwfigmacom-dm-sans-regular-upper-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 83.13px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container7 {
+  padding: 33.8px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.small-legenda {
+  color: var(--color-red-46, #b95131);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-small-upper-font-family,
+    "DmSans-Bold",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-small-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-semantic-small-upper-line-height, 12px);
+  letter-spacing: var(--wwwfigmacom-semantic-small-upper-letter-spacing, 1.2px);
+  font-weight: var(--wwwfigmacom-semantic-small-upper-font-weight, 700);
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.heading-2 {
+  padding: 12.2px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.malin-kundang {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-2-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-heading-2-font-size, 30px);
+  line-height: var(--wwwfigmacom-semantic-heading-2-line-height, 45px);
+  font-weight: var(--wwwfigmacom-semantic-heading-2-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container8 {
+  padding: 9px 0px 19.3px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  min-height: var(--height-58, 58px);
+  position: relative;
+}
+.kisah-tentang-perjalanan-keluarga-dan-pentingnya-mengingat-asal-usul {
+  color: var(--color-grey-42, #67716c);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 12px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 19.2px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.horizontal-border {
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 0.8px 0px 0px 0px;
+  padding: 14px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.container9 {
+  display: flex;
+  flex-direction: row;
+  gap: var(--item-spacing-5, 5px);
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.component-13 {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  overflow: visible;
+}
+._4-menit {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 9px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 13.5px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button4 {
+  display: flex;
+  flex-direction: row;
+  gap: var(--item-spacing-6, 6px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+}
+.baca-cerita {
+  color: var(--color-red-46, #b95131);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Bold",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 10px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 15px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 700);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.component-14 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+.article2 {
+  background: var(--color-grey-96-2, #faf7ef);
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+.background2 {
+  background: var(--color-orange-51, #d09c33);
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+.border4 {
+  border-style: solid;
+  border-color: var(--color-orange-18, #3a3320);
+  border-width: 29px;
+  opacity: 0.23;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 10px;
+  top: -117.28px;
+  transform-origin: 0 0;
+  transform: rotate(45deg) scale(1, 1);
+}
+.s {
+  color: var(--color-orange-18, #3a3320);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-libre-caslon-display-regular-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-libre-caslon-display-regular-font-size, 100px);
+  line-height: var(
+    --wwwfigmacom-libre-caslon-display-regular-line-height,
+    150px
+  );
+  font-weight: var(--wwwfigmacom-libre-caslon-display-regular-font-weight, 400);
+  opacity: 0.8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.border5 {
+  border-style: solid;
+  border-color: var(--color-orange-18, #3a3320);
+  border-width: 29px;
+  opacity: 0.23;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 311.29px;
+  top: 92.72px;
+  transform-origin: 0 0;
+  transform: rotate(45deg) scale(1, 1);
+}
+.jawa-barat {
+  color: var(--color-orange-18, #3a3320);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-upper-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-upper-line-height, 12px);
+  letter-spacing: var(
+    --wwwfigmacom-dm-sans-regular-upper-letter-spacing,
+    1.2px
+  );
+  font-weight: var(--wwwfigmacom-dm-sans-regular-upper-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 59.19px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sangkuriang {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-2-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-heading-2-font-size, 30px);
+  line-height: var(--wwwfigmacom-semantic-heading-2-line-height, 45px);
+  font-weight: var(--wwwfigmacom-semantic-heading-2-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.legenda-tentang-bentang-alam-bandung-dan-janji-yang-mustahil-diselesaikan {
+  color: var(--color-grey-42, #67716c);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 12px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 19.2px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.component-15 {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  overflow: visible;
+}
+.component-16 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+.article3 {
+  background: var(--color-grey-96-2, #faf7ef);
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+}
+.background3 {
+  background: var(--color-spring-green-40, #55756c);
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+.t {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-libre-caslon-display-regular-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-libre-caslon-display-regular-font-size, 100px);
+  line-height: var(
+    --wwwfigmacom-libre-caslon-display-regular-line-height,
+    150px
+  );
+  font-weight: var(--wwwfigmacom-libre-caslon-display-regular-font-weight, 400);
+  opacity: 0.8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.border6 {
+  border-style: solid;
+  border-color: var(--color-orange-87-4, #f6e7c7);
+  border-width: 29px;
+  opacity: 0.23;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 311.3px;
+  top: 92.72px;
+  transform-origin: 0 0;
+  transform: rotate(45deg) scale(1, 1);
+}
+.jawa-tengah {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-upper-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-upper-line-height, 12px);
+  letter-spacing: var(
+    --wwwfigmacom-dm-sans-regular-upper-letter-spacing,
+    1.2px
+  );
+  font-weight: var(--wwwfigmacom-dm-sans-regular-upper-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 67.11px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.small-dongeng {
+  color: var(--color-red-46, #b95131);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-small-upper-font-family,
+    "DmSans-Bold",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-small-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-semantic-small-upper-line-height, 12px);
+  letter-spacing: var(--wwwfigmacom-semantic-small-upper-letter-spacing, 1.2px);
+  font-weight: var(--wwwfigmacom-semantic-small-upper-font-weight, 700);
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.timun-mas {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-2-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-heading-2-font-size, 30px);
+  line-height: var(--wwwfigmacom-semantic-heading-2-line-height, 45px);
+  font-weight: var(--wwwfigmacom-semantic-heading-2-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.keberanian-seorang-anak-menghadapi-bahaya-dengan-kecerdikan-dan-bekal-keluarga {
+  color: var(--color-grey-42, #67716c);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 12px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 19.2px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.component-17 {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  overflow: visible;
+}
+._3-menit {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 9px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 13.5px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.component-18 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+.article4 {
+  background: var(--color-grey-96-2, #faf7ef);
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+}
+.background4 {
+  background: var(--color-cyan-20, #273f3b);
+  padding: 40px 0px 40px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  height: 230px;
+  position: relative;
+  overflow: hidden;
+}
+.k {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-libre-caslon-display-regular-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-libre-caslon-display-regular-font-size, 100px);
+  line-height: var(
+    --wwwfigmacom-libre-caslon-display-regular-line-height,
+    150px
+  );
+  font-weight: var(--wwwfigmacom-libre-caslon-display-regular-font-weight, 400);
+  opacity: 0.8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.nusantara {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-upper-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-upper-line-height, 12px);
+  letter-spacing: var(
+    --wwwfigmacom-dm-sans-regular-upper-letter-spacing,
+    1.2px
+  );
+  font-weight: var(--wwwfigmacom-dm-sans-regular-upper-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 56.18px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container10 {
+  padding: 33.79px 25px 25px 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.small-fabel {
+  color: var(--color-red-46, #b95131);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-small-upper-font-family,
+    "DmSans-Bold",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-small-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-semantic-small-upper-line-height, 12px);
+  letter-spacing: var(--wwwfigmacom-semantic-small-upper-letter-spacing, 1.2px);
+  font-weight: var(--wwwfigmacom-semantic-small-upper-font-weight, 700);
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.heading-22 {
+  padding: 12.21px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.kancil-dan-buaya {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-2-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-heading-2-font-size, 30px);
+  line-height: var(--wwwfigmacom-semantic-heading-2-line-height, 45px);
+  font-weight: var(--wwwfigmacom-semantic-heading-2-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container11 {
+  padding: 9px 0px 19.31px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  min-height: var(--height-58, 58px);
+  position: relative;
+}
+.seekor-kancil-menggunakan-kecerdikan-untuk-menyeberangi-sungai {
+  color: var(--color-grey-42, #67716c);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 12px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 19.2px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.component-19 {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  overflow: visible;
+}
+.component-110 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+.article5 {
+  background: var(--color-grey-96-2, #faf7ef);
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
+}
+.r {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-libre-caslon-display-regular-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-libre-caslon-display-regular-font-size, 100px);
+  line-height: var(
+    --wwwfigmacom-libre-caslon-display-regular-line-height,
+    150px
+  );
+  font-weight: var(--wwwfigmacom-libre-caslon-display-regular-font-weight, 400);
+  opacity: 0.8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.jawa-tengah-diy {
+  color: var(--color-orange-87-4, #f6e7c7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-upper-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-upper-line-height, 12px);
+  letter-spacing: var(
+    --wwwfigmacom-dm-sans-regular-upper-letter-spacing,
+    1.2px
+  );
+  font-weight: var(--wwwfigmacom-dm-sans-regular-upper-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 97.15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.roro-jonggrang {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-2-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-heading-2-font-size, 30px);
+  line-height: var(--wwwfigmacom-semantic-heading-2-line-height, 45px);
+  font-weight: var(--wwwfigmacom-semantic-heading-2-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.kisah-yang-hidup-di-sekitar-kompleks-prambanan-tentang-janji-dan-seribu-bangunan {
+  color: var(--color-grey-42, #67716c);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 12px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 19.2px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.component-111 {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  overflow: visible;
+}
+.component-112 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+.article6 {
+  background: var(--color-grey-96-2, #faf7ef);
+  border-style: solid;
+  border-color: var(--color-cyan-14-18, rgba(24, 45, 42, 0.18));
+  border-width: 1px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 3 / span 1;
+  grid-row: 2 / span 1;
+}
+.a {
+  color: var(--color-orange-18, #3a3320);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-libre-caslon-display-regular-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-libre-caslon-display-regular-font-size, 100px);
+  line-height: var(
+    --wwwfigmacom-libre-caslon-display-regular-line-height,
+    150px
+  );
+  font-weight: var(--wwwfigmacom-libre-caslon-display-regular-font-weight, 400);
+  opacity: 0.8;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.border7 {
+  border-style: solid;
+  border-color: var(--color-orange-18, #3a3320);
+  border-width: 29px;
+  opacity: 0.23;
+  flex-shrink: 0;
+  width: 180px;
+  height: 180px;
+  position: absolute;
+  left: 311.3px;
+  top: 92.72px;
+  transform-origin: 0 0;
+  transform: rotate(45deg) scale(1, 1);
+}
+.sumatera-utara {
+  color: var(--color-orange-18, #3a3320);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-upper-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-upper-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-upper-line-height, 12px);
+  letter-spacing: var(
+    --wwwfigmacom-dm-sans-regular-upper-letter-spacing,
+    1.2px
+  );
+  font-weight: var(--wwwfigmacom-dm-sans-regular-upper-font-weight, 400);
+  text-transform: uppercase;
+  position: absolute;
+  left: 18px;
+  top: 18px;
+  width: 83.14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.asal-mula-danau-toba {
+  color: var(--color-cyan-14, #182d2a);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-2-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-heading-2-font-size, 30px);
+  line-height: var(--wwwfigmacom-semantic-heading-2-line-height, 45px);
+  font-weight: var(--wwwfigmacom-semantic-heading-2-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cerita-tentang-janji-yang-dijaga-keluarga-dan-asal-sebuah-danau-besar {
+  color: var(--color-grey-42, #67716c);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 12px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 19.2px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.component-113 {
+  flex-shrink: 0;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  overflow: visible;
+}
+.component-114 {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  overflow: visible;
+}
+.frame3 {
+  background: var(--color-cyan-10, #10231f);
+  padding: 75px 83.66px 20px 83.66px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 1440px;
+  height: 364px;
+  position: absolute;
+  left: 0px;
+  top: 1857px;
+}
+.container12 {
+  padding: 0px 0px 60px 0px;
+  align-self: stretch;
+  flex-shrink: 0;
+  display: grid;
+  gap: 70px;
+  position: relative;
+  grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.5fr) minmax(0, 1fr);
+  grid-template-rows: 178px;
+}
+.container13 {
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-spacing-25, 25px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+}
+.background-border {
+  background: var(--color-cyan-14, #182d2a);
+  border-radius: var(--corner-radius-21, 21px);
+  border-style: solid;
+  border-color: var(--color-cyan-14, #182d2a);
+  border-width: 1px;
+  padding: 5.8px 0px 7.2px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  position: relative;
+}
+.overlay-shadow {
+  background: var(--color-white-02, rgba(255, 255, 255, 0));
+  border-radius: var(--corner-radius-21, 21px);
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  box-shadow: inset 0px 0px 0px 6px rgba(24, 45, 42, 1),
+    inset 0px 0px 0px 5px rgba(244, 240, 231, 1);
+}
+.ap {
+  color: var(--color-grey-93, #f4f0e7);
+  text-align: center;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 18px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 27px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading-23 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.rawat-yang-kita-warisi-wariskan-yang-kita-rawat {
+  color: var(--color-orange-87-3, #ebe2d2);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-heading-2-font-family,
+    "LibreCaslonDisplay-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-heading-2-font-size, 37px);
+  line-height: var(--wwwfigmacom-semantic-heading-2-line-height, 55.5px);
+  font-weight: var(--wwwfigmacom-semantic-heading-2-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container14 {
+  padding: 0px 0px 44px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-spacing-10, 10px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 1;
+}
+.small-margin {
+  padding: 0px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.small {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.jelajahi {
+  color: var(--color-orange-53, #d9a634);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-small-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-small-font-size, 8px);
+  line-height: var(--wwwfigmacom-semantic-small-line-height, 12px);
+  letter-spacing: var(--wwwfigmacom-semantic-small-letter-spacing, 1.2px);
+  font-weight: var(--wwwfigmacom-semantic-small-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button5 {
+  padding: 0px 99.48px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.beranda {
+  color: var(--color-grey-78, #c4ccc7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 12px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 18px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button6 {
+  padding: 0px 116.61px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.arsip {
+  color: var(--color-grey-78, #c4ccc7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 12px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 18px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button7 {
+  padding: 0px 122.85px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.kuis {
+  color: var(--color-grey-78, #c4ccc7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 12px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 18px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.button8 {
+  padding: 0px 111.46px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.cerita {
+  color: var(--color-grey-78, #c4ccc7);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-button-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-button-font-size, 12px);
+  line-height: var(--wwwfigmacom-semantic-button-line-height, 18px);
+  font-weight: var(--wwwfigmacom-semantic-button-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container15 {
+  padding: 0px 0px 108.6px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-spacing-915, 9.15px);
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+  grid-column: 3 / span 1;
+  grid-row: 1 / span 1;
+}
+.catatan {
+  color: var(--color-orange-53, #d9a634);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-semantic-small-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-semantic-small-font-size, 8px);
+  line-height: var(--wwwfigmacom-semantic-small-line-height, 12px);
+  letter-spacing: var(--wwwfigmacom-semantic-small-letter-spacing, 1.2px);
+  font-weight: var(--wwwfigmacom-semantic-small-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.container16 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+.fitur-akun-unggahan-dan-peringkat-pada-prototipe-ini-menggunakan-penyimpanan-lokal-di-browser {
+  color: var(--color-grey-64, #9ba9a2);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 11px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 18.7px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.horizontal-border2 {
+  border-style: solid;
+  border-color: var(--color-white-13, rgba(255, 255, 255, 0.13));
+  border-width: 0.8px 0px 0px 0px;
+  padding: 18px 0px 0px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+._2026-arsip-pusaka-techtopia-vol-2 {
+  color: var(--color-grey-53, #7e9188);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 12px);
+  letter-spacing: var(--wwwfigmacom-dm-sans-regular-letter-spacing, 0.64px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.pendidikan-berbasis-lokal-warisan-budaya-seni {
+  color: var(--color-grey-53, #7e9188);
+  text-align: left;
+  font-family: var(
+    --wwwfigmacom-dm-sans-regular-font-family,
+    "DmSans-Regular",
+    sans-serif
+  );
+  font-size: var(--wwwfigmacom-dm-sans-regular-font-size, 8px);
+  line-height: var(--wwwfigmacom-dm-sans-regular-line-height, 12px);
+  letter-spacing: var(--wwwfigmacom-dm-sans-regular-letter-spacing, 0.64px);
+  font-weight: var(--wwwfigmacom-dm-sans-regular-font-weight, 400);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

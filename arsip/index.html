@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#182d2a">
+  <meta name="description" content="Jelajahi arsip komunitas atau catat pengetahuan budaya dengan izin dan sumber yang jelas.">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Arsip Komunitas — Arsip Pusaka</title>
+</head>
+<body data-page="arsip">
+  <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <div id="site-header"></div>
+  <main id="konten">
+    <header class="page-hero">
+      <div class="page-hero__inner">
+        <h1 class="page-hero__title">Catatan kecil, <em>jejak yang panjang.</em></h1>
+        <p class="page-hero__lead">Dokumentasikan budaya di sekitarmu dengan asal, sumber, dan izin yang jelas.</p>
+        <div class="page-hero__meta"><span>Arsip komunitas</span><span>Metadata tersimpan lokal</span><span>Tanpa unggahan server</span></div>
+      </div>
+    </header>
+    <section class="page-main">
+      <div class="shell">
+        <div class="archive-toolbar">
+          <div class="tab-list" role="tablist" aria-label="Jenis arsip">
+            <button class="tab-button" type="button" role="tab" id="community-tab" aria-selected="true" data-archive-tab="community" aria-controls="archive-community-view">Arsip Komunitas</button>
+            <button class="tab-button" type="button" role="tab" id="personal-tab" aria-selected="false" data-archive-tab="personal" aria-controls="archive-personal">Arsip Saya</button>
+          </div>
+          <button class="button" type="button" id="open-upload">＋ Unggah dokumen</button>
+        </div>
+
+        <section id="archive-community-view" role="tabpanel" aria-labelledby="community-tab">
+          <div class="content-toolbar">
+            <label class="search-field"><span class="screen-reader-only">Cari arsip</span><input id="archive-search" type="search" placeholder="Cari judul, daerah, atau sumber…" autocomplete="off"></label>
+            <div class="filter-list" aria-label="Filter kategori">
+              <button class="filter-button" type="button" data-category-filter="Semua" aria-pressed="true">Semua</button>
+              <button class="filter-button" type="button" data-category-filter="Tari" aria-pressed="false">Tari</button>
+              <button class="filter-button" type="button" data-category-filter="Musik" aria-pressed="false">Musik</button>
+              <button class="filter-button" type="button" data-category-filter="Kerajinan" aria-pressed="false">Kerajinan</button>
+              <button class="filter-button" type="button" data-category-filter="Bahasa & Aksara" aria-pressed="false">Bahasa &amp; Aksara</button>
+              <button class="filter-button" type="button" data-category-filter="Kuliner" aria-pressed="false">Kuliner</button>
+              <button class="filter-button" type="button" data-category-filter="Upacara" aria-pressed="false">Upacara</button>
+            </div>
+          </div>
+          <p class="source-note">Entri berlabel CONTOH merupakan data fiktif untuk demonstrasi, bukan dokumentasi narasumber nyata.</p>
+          <div id="archive-list" class="archive-grid" aria-live="polite"></div>
+          <div id="archive-empty" class="empty-state" hidden><h3>Belum ada catatan yang cocok.</h3><p>Ubah kategori atau kata pencarian untuk melihat entri lain.</p></div>
+        </section>
+
+        <section id="archive-personal" role="tabpanel" aria-labelledby="personal-tab" hidden>
+          <p class="source-note">Unggahan dan skor hanya tersimpan di browser ini. Tidak ada data yang dikirim ke server.</p>
+          <div class="tab-list" role="tablist" aria-label="Isi Arsip Saya">
+            <button class="tab-button" type="button" role="tab" aria-selected="true" data-personal-view="uploads">Unggahan saya</button>
+            <button class="tab-button" type="button" role="tab" aria-selected="false" data-personal-view="scores">Skor kuis saya</button>
+          </div>
+          <div id="personal-gate" class="empty-state"><h3>Masuk untuk membuka Arsip Saya.</h3><p>Akun demo menghubungkan metadata unggahan dan riwayat kuis di perangkatmu.</p><button class="button" type="button" data-open-login>Masuk ke akun demo</button></div>
+          <div id="personal-uploads" class="archive-grid" role="tabpanel" hidden></div>
+          <div id="personal-scores" role="tabpanel" hidden></div>
+        </section>
+
+        <section id="upload-panel" class="form-panel" data-open="false" hidden aria-labelledby="upload-heading">
+          <h2 id="upload-heading">Simpan pengetahuan dengan konteksnya.</h2>
+          <p class="form-panel__intro">Prototipe ini hanya menyimpan metadata di penyimpanan lokal. Berkas yang dipilih tidak pernah diunggah dan hanya nama, tipe, serta ukuran berkas yang dicatat.</p>
+          <form id="upload-form">
+            <div class="form-grid">
+              <div class="field"><label for="upload-title">Judul</label><input id="upload-title" name="title" type="text" maxlength="80" required autocomplete="off"><span class="field__hint">Maksimal 80 karakter.</span></div>
+              <div class="field"><label for="upload-category">Kategori</label><select id="upload-category" name="category" required><option value="">Pilih kategori</option><option>Tari</option><option>Musik</option><option>Kerajinan</option><option>Bahasa &amp; Aksara</option><option>Kuliner</option><option>Upacara</option></select></div>
+              <div class="field field--full"><label for="upload-origin">Asal daerah</label><input id="upload-origin" name="origin" type="text" maxlength="100" required placeholder="Contoh: Kabupaten, Provinsi"></div>
+              <div class="field field--full"><label for="upload-description">Deskripsi</label><textarea id="upload-description" name="description" maxlength="400" required placeholder="Tuliskan konteks budaya yang dicatat."></textarea></div>
+              <div class="field field--full"><label for="upload-source">Sumber atau narasumber</label><input id="upload-source" name="source" type="text" maxlength="400" required placeholder="Contoh: wawancara narasumber (dengan izin), judul referensi, tautan"><span class="field__hint">Deskripsi dan sumber digabung maksimal 400 karakter. <span id="upload-character-count">0 / 400 karakter</span></span></div>
+              <div class="field field--full"><label for="upload-file">Berkas (opsional)</label><input id="upload-file" name="file" type="file" accept="image/*,audio/*,video/*,.pdf,.txt"><span class="field__hint">Berkas tidak dikirim; metadata lokalnya saja yang dicatat.</span></div>
+              <label class="check-field field--full" for="upload-permission"><input id="upload-permission" name="permission" type="checkbox" required><span>Saya memiliki hak atau izin atas dokumen ini.</span></label>
+            </div>
+            <div class="form-actions"><button class="button" type="submit">Catat di perangkat ini</button><button class="button button--quiet" type="button" id="cancel-upload">Batal</button></div>
+          </form>
+        </section>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+  <div id="site-toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/arsip.js" defer></script>
+</body>
+</html>

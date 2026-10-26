@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#182d2a">
+  <meta name="description" content="Uji wawasan budaya Nusantara melalui kuis sepuluh pertanyaan dengan penjelasan.">
+  <link rel="stylesheet" href="../css/style.css">
+  <title>Kuis Budaya — Arsip Pusaka</title>
+</head>
+<body data-page="kuis">
+  <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <div id="site-header"></div>
+  <main id="konten">
+    <header class="page-hero">
+      <div class="page-hero__inner">
+        <h1 class="page-hero__title">Seberapa kenal kamu dengan <em>Nusantara?</em></h1>
+        <p class="page-hero__lead">Sepuluh pertanyaan singkat. Bukan untuk menghakimi—untuk memantik rasa ingin tahu.</p>
+        <div class="page-hero__meta"><span>10 soal demo acak dari bank lokal</span><span>7 kategori</span><span>Penjelasan setelah setiap jawaban</span></div>
+      </div>
+    </header>
+    <section class="page-main">
+      <div class="shell quiz-layout">
+        <div>
+          <section id="quiz-intro" class="quiz-intro" aria-labelledby="quiz-intro-title">
+            <h2 id="quiz-intro-title">Siap menjadi Penjaga Pusaka?</h2>
+            <p>Jawab sepuluh soal pilihan ganda. Setiap jawaban langsung disertai penjelasan, dan waktu dicatat sebagai informasi—bukan tekanan. Bank 30 soal ini adalah materi demo edukatif; fakta dan sumbernya perlu ditinjau sebelum publikasi.</p>
+            <div class="quiz-intro__facts"><span>+10 untuk jawaban benar</span><span>Skor maksimal 100</span><span>Tanpa batas waktu</span></div>
+            <button class="button button--gold" id="start-quiz" type="button">Mulai kuis →</button>
+          </section>
+          <section id="quiz-stage" class="quiz-stage" aria-labelledby="quiz-question" hidden>
+            <div class="quiz-stage__meta"><span id="quiz-position"></span><span>Waktu <time id="quiz-timer">00:00</time></span></div>
+            <progress class="quiz-progress" id="quiz-progress" max="10" value="0" aria-label="Kemajuan kuis"></progress>
+            <h2 class="quiz-stage__question" id="quiz-question" aria-live="polite"></h2>
+            <div class="quiz-options" id="quiz-options"></div>
+            <div class="quiz-feedback" id="quiz-feedback" role="status" aria-live="polite" hidden></div>
+            <div class="quiz-stage__actions"><button class="button" id="quiz-next" type="button" hidden>Pertanyaan berikutnya</button></div>
+          </section>
+          <section id="quiz-result" class="quiz-result" aria-labelledby="quiz-result-title" hidden>
+            <h2 id="quiz-result-title">Wawasanmu bertambah.</h2>
+            <div class="quiz-result__score"><span class="quiz-result__number" id="result-score">0</span><span class="quiz-result__level" id="result-level"></span></div>
+            <p id="result-correct"></p>
+            <p class="field__hint">Riwayat: <span id="result-storage"></span>. Skor ini hanya tersimpan di browser.</p>
+            <h3>Ulasan jawaban</h3>
+            <ul class="quiz-review-list" id="quiz-review"></ul>
+            <div class="form-actions"><a class="button button--gold" href="../cerita/index.html">Baca ceritanya</a><a class="button button--quiet" href="../arsip/index.html">Arsipkan budaya daerahmu</a><button class="button button--quiet" id="play-again" type="button">Main lagi</button></div>
+            <p class="status-message">Untuk memasukkan skor ke papan akun demo, <a href="#masuk">masuk terlebih dahulu</a>. Hanya nama pengguna yang ditampilkan.</p>
+          </section>
+        </div>
+
+        <aside class="leaderboard" aria-labelledby="leaderboard-title">
+          <div class="leaderboard__heading">
+            <h2 id="leaderboard-title">Papan peringkat</h2>
+            <p class="field__hint">Mode demo dengan data lokal.</p>
+            <p class="field__hint">Semua waktu · urut skor, waktu, lalu tanggal.</p>
+          </div>
+          <div class="leaderboard__table-wrap">
+            <table><thead><tr><th scope="col">#</th><th scope="col">Pemain</th><th scope="col">Skor</th><th scope="col">Waktu</th><th scope="col">Tanggal</th></tr></thead><tbody id="leaderboard-body"></tbody></table>
+          </div>
+          <p class="leaderboard__note">Baris “contoh” adalah data fiktif. Skor akun disimpan di perangkat ini, bukan dibagikan antarpengguna. Tanpa akun, skor disimpan sebagai riwayat tamu.</p>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+  <div id="site-toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="../js/data.js" defer></script>
+  <script src="../js/common.js" defer></script>
+  <script src="../js/kuis.js" defer></script>
+</body>
+</html>
