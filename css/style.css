@@ -502,6 +502,26 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   padding-block: clamp(58px, 8vw, 96px);
 }
 
+.page-hero--mascot .page-hero__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, 0.62fr);
+  align-items: center;
+  gap: clamp(28px, 6vw, 84px);
+}
+
+.page-hero__copy {
+  min-width: 0;
+}
+
+.page-hero__mascot {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  max-height: 340px;
+  justify-self: end;
+  object-fit: contain;
+}
+
 .page-hero__title {
   max-width: 15ch;
   margin: 0;
@@ -1816,6 +1836,15 @@ dialog::backdrop {
     grid-template-columns: minmax(0, 1fr);
   }
 
+  .page-hero--mascot .page-hero__inner {
+    grid-template-columns: minmax(0, 1fr) minmax(150px, 0.5fr);
+    gap: 20px;
+  }
+
+  .page-hero__mascot {
+    max-height: 280px;
+  }
+
   .archive-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1889,6 +1918,17 @@ dialog::backdrop {
 
   .page-hero__inner {
     padding-block: 56px;
+  }
+
+  .page-hero--mascot .page-hero__inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .page-hero__mascot {
+    width: min(220px, 62vw);
+    max-height: none;
+    justify-self: center;
   }
 
   .page-hero__title {
