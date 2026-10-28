@@ -212,8 +212,118 @@
     });
   }
 
+  function initScrollReveals() {
+    const revealSelector = [
+      ".hero__copy",
+      ".page-hero__copy",
+      "main .section-heading",
+      "main .stats",
+      "main .case",
+      "main .process-showcase__copy",
+      "main .process-step",
+      "main .feature-showcase__copy",
+      "main .feature-item",
+      "main .source-list li",
+      "main .source-note",
+      "main .archive-toolbar",
+      "main .content-toolbar",
+      "main .filter-list",
+      "main .archive-card",
+      "main .empty-state",
+      "main .form-panel",
+      "main .quiz-intro",
+      "main .quiz-stage",
+      "main .quiz-result",
+      "main .leaderboard",
+      "main .story-card",
+      "main .story-callout",
+      "#site-footer .site-footer__inner > section",
+      "#site-footer .site-footer__bottom"
+    ].join(", ");
+    const main = document.querySelector("main");
+    const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!("IntersectionObserver" in window) || prefersReducedMotion) return;
+
+    document.body.dataset.scrollReveal = "true";
+    const revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.08, rootMargin: "0px 0px -8% 0px" });
+
+    function observeRevealTargets(root) {
+      if (root.matches && root.matches(revealSelector)) {
+        root.classList.add("scroll-reveal");
+        revealObserver.observe(root);
+      }
+      if (!root.querySelectorAll) return;
+      root.querySelectorAll(revealSelector).forEach(function (element) {
+        element.classList.add("scroll-reveal");
+        revealObserver.observe(element);
+      });
+    }
+
+    observeRevealTargets(document);
+    if (main && "MutationObserver" in window) {
+      const contentObserver = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          mutation.addedNodes.forEach(function (node) {
+            if (node.nodeType === Node.ELEMENT_NODE) observeRevealTargets(node);
+          });
+        });
+      });
+      contentObserver.observe(main, { childList: true, subtree: true });
+    }
+  }
+
+  function initStatCounters() {
+    const stats = document.querySelector(".stats");
+    const counters = stats ? Array.from(stats.querySelectorAll(".stat__value[data-count]")) : [];
+    const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!stats || !counters.length || prefersReducedMotion || !("IntersectionObserver" in window)) return;
+
+    const formatter = new Intl.NumberFormat("id-ID");
+    let animationFrame = 0;
+    let animationId = 0;
+    const observer = new IntersectionObserver(function (entries) {
+      if (!entries.some(function (entry) { return entry.isIntersecting; })) return;
+
+      animationId += 1;
+      const currentAnimationId = animationId;
+      if (animationFrame) window.cancelAnimationFrame(animationFrame);
+      const duration = 1500;
+      const startedAt = performance.now();
+      const targets = counters.map(function (counter) {
+        return Number(counter.dataset.count);
+      });
+
+      function updateCounters(now) {
+        if (currentAnimationId !== animationId) return;
+        const progress = Math.min((now - startedAt) / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 4);
+        counters.forEach(function (counter, index) {
+          counter.textContent = formatter.format(Math.round(targets[index] * easedProgress));
+        });
+        if (progress < 1) {
+          animationFrame = window.requestAnimationFrame(updateCounters);
+        } else {
+          animationFrame = 0;
+        }
+      }
+
+      counters.forEach(function (counter) { counter.textContent = "0"; });
+      animationFrame = window.requestAnimationFrame(updateCounters);
+    }, { threshold: 0.3 });
+
+    observer.observe(stats);
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     mountChrome();
+    initScrollReveals();
+    initStatCounters();
     function updateNavigationState() {
       document.body.dataset.navScrolled = String(window.scrollY > 28);
     }
