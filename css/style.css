@@ -494,6 +494,10 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   background: var(--ink);
 }
 
+.page-hero--mascot {
+  margin-top: -78px;
+}
+
 .page-hero__inner {
   position: relative;
   z-index: 1;
@@ -507,10 +511,27 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   grid-template-columns: minmax(0, 1fr) minmax(180px, 0.62fr);
   align-items: center;
   gap: clamp(28px, 6vw, 84px);
+  padding-top: calc(clamp(58px, 8vw, 96px) + 78px);
 }
 
 .page-hero__copy {
   min-width: 0;
+}
+
+.archive-mascot {
+  position: relative;
+  width: min(100%, 440px);
+  margin-bottom: 100px;
+  aspect-ratio: 677 / 369;
+  justify-self: end;
+  outline: none;
+  cursor: default;
+}
+
+.archive-mascot:focus-visible {
+  border-radius: 48%;
+  outline: 2px solid var(--gold);
+  outline-offset: 7px;
 }
 
 .page-hero__mascot {
@@ -520,6 +541,133 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   max-height: 340px;
   justify-self: end;
   object-fit: contain;
+}
+
+.archive-mascot .page-hero__mascot {
+  width: 100%;
+  justify-self: initial;
+}
+
+.story-mascot {
+  position: relative;
+  width: min(100%, 440px);
+  aspect-ratio: 677 / 369;
+  justify-self: end;
+}
+
+.story-mascot__shelf,
+.story-mascot__figure {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: auto;
+  max-height: none;
+  transform: translateX(-50%);
+}
+
+.story-mascot__shelf {
+  z-index: 0;
+  width: min(620px, calc(100vw - 24px));
+  max-width: none;
+  animation: story-shelf-arrive 1100ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+}
+
+.story-mascot__figure {
+  z-index: 1;
+  width: min(360px, 100%);
+  justify-self: initial;
+}
+
+@keyframes story-shelf-arrive {
+  from {
+    transform: translate(calc(-50% + 110vw), 18px);
+  }
+
+  to {
+    transform: translate(-50%, 0);
+  }
+}
+
+.archive-mascot__props {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.archive-mascot__prop {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  width: var(--prop-size);
+  height: auto;
+  max-width: none;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.12);
+  transform-origin: center;
+  transition: transform 220ms cubic-bezier(0.2, 0.7, 0.25, 1),
+    opacity 160ms ease-out;
+  transition-delay: 0ms;
+}
+
+.archive-mascot__prop--scroll {
+  --prop-size: 31%;
+  --prop-x: clamp(-225px, -29vw, -100px);
+  --prop-y: clamp(-145px, -25vw, -90px);
+  --prop-tilt: -10deg;
+  --prop-delay: 0ms;
+}
+
+.archive-mascot__prop--cloth {
+  --prop-size: 29%;
+  --prop-x: clamp(100px, 29vw, 225px);
+  --prop-y: clamp(-145px, -25vw, -90px);
+  --prop-tilt: 8deg;
+  --prop-delay: 45ms;
+}
+
+.archive-mascot__prop--house {
+  --prop-size: 27%;
+  --prop-x: clamp(-260px, -37vw, -115px);
+  --prop-y: 0px;
+  --prop-tilt: -7deg;
+  --prop-delay: 90ms;
+}
+
+.archive-mascot__prop--offerings {
+  --prop-size: 29%;
+  --prop-x: clamp(120px, 37vw, 260px);
+  --prop-y: 0px;
+  --prop-tilt: 7deg;
+  --prop-delay: 135ms;
+}
+
+.archive-mascot__prop--keris {
+  --prop-size: 37%;
+  --prop-x: clamp(-210px, -30vw, -95px);
+  --prop-y: clamp(100px, 18vw, 120px);
+  --prop-tilt: -8deg;
+  --prop-delay: 180ms;
+}
+
+.archive-mascot__prop--mask {
+  --prop-size: 14%;
+  --prop-x: clamp(95px, 30vw, 210px);
+  --prop-y: clamp(90px, 16vw, 110px);
+  --prop-tilt: 11deg;
+  --prop-delay: 225ms;
+}
+
+.archive-mascot:is(:hover, :focus) .archive-mascot__prop {
+  opacity: 1;
+  transform: translate(
+      calc(-50% + var(--prop-x)),
+      calc(-50% + var(--prop-y))
+    )
+    rotate(var(--prop-tilt)) scale(1);
+  transition-duration: 420ms, 250ms;
+  transition-delay: var(--prop-delay);
 }
 
 .page-hero__title {
@@ -1925,10 +2073,53 @@ dialog::backdrop {
     gap: 12px;
   }
 
+  .archive-mascot {
+    width: min(280px, 72vw);
+    margin: 0 0 120px;
+    justify-self: center;
+  }
+
+  .story-mascot {
+    width: min(100%, 400px);
+    justify-self: center;
+  }
+
+  .story-mascot__shelf {
+    width: min(460px, calc(100vw - 16px));
+  }
+
+  .story-mascot__figure {
+    width: min(280px, 78vw);
+  }
+
+  .archive-mascot__prop--scroll,
+  .archive-mascot__prop--cloth {
+    --prop-y: clamp(-40px, -7vw, -20px);
+  }
+
+  .archive-mascot__prop--house,
+  .archive-mascot__prop--offerings {
+    --prop-y: clamp(80px, 18vw, 100px);
+  }
+
+  .archive-mascot__prop--keris {
+    --prop-y: clamp(180px, 40vw, 220px);
+  }
+
+  .archive-mascot__prop--mask {
+    --prop-y: clamp(170px, 37vw, 205px);
+    --prop-x: clamp(55px, 16vw, 90px);
+  }
+
   .page-hero__mascot {
     width: min(220px, 62vw);
     max-height: none;
     justify-self: center;
+  }
+
+  .archive-mascot .page-hero__mascot {
+    width: 100%;
+    justify-self: initial;
   }
 
   .page-hero__title {
@@ -2098,5 +2289,13 @@ dialog::backdrop {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .archive-mascot__prop {
+    transition: none;
+  }
+
+  .story-mascot__shelf {
+    animation: none;
   }
 }
