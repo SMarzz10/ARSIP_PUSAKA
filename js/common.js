@@ -1,10 +1,12 @@
 (function () {
   "use strict";
 
+  // Kunci dan status penyimpanan lokal untuk akun demo.
   const SESSION_KEY = "arsipPusaka:session";
   const toastElement = document.querySelector("#site-toast");
   let toastTimer;
 
+  // Pesan singkat untuk memberi umpan balik pada aksi pengguna.
   function notify(message, tone) {
     if (!toastElement) return;
     toastElement.textContent = message;
@@ -78,6 +80,7 @@
     return false;
   }
 
+  // Header, footer, dialog akun, dan chatbot dipasang bersama di setiap halaman.
   function mountChrome() {
     const header = document.querySelector("#site-header");
     const footer = document.querySelector("#site-footer");
@@ -135,6 +138,7 @@
     messages.scrollTop = messages.scrollHeight;
   }
 
+  // Jawaban chatbot berasal dari aturan demo lokal, bukan layanan AI atau backend.
   const botRules = [
     { test: /klaim|sengketa|pengakuan|unesco|status resmi/i, text: "Pembahasan budaya sebaiknya berangkat dari dokumentasi dan sumber resmi, bukan saling menyalahkan. Status setiap tradisi perlu dicek langsung ke lembaga pencatat.", href: "../lading_page/index.html#sumber", label: "Lihat catatan sumber" },
     { test: /batik/i, text: "Batik punya ragam teknik dan konteks daerah. Catat pembuat, asal, teknik, sumber pengetahuan, serta izin sebelum membagikan dokumentasinya.", href: "../arsip/index.html", label: "Buka Arsip" },
@@ -212,6 +216,7 @@
     });
   }
 
+  // Animasi dimulai saat elemen memasuki viewport; konten baru ikut diamati.
   function initScrollReveals() {
     const revealSelector = [
       ".hero__copy",
@@ -278,6 +283,7 @@
     }
   }
 
+  // Angka statistik dihitung saat bagian statistik masuk ke viewport.
   function initStatCounters() {
     const stats = document.querySelector(".stats");
     const counters = stats ? Array.from(stats.querySelectorAll(".stat__value[data-count]")) : [];
@@ -320,10 +326,13 @@
     observer.observe(stats);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  // Titik masuk fitur bersama setelah elemen HTML tersedia.
+  function initApp() {
     mountChrome();
     initScrollReveals();
     initStatCounters();
+
+    // Navigasi responsif dan status header saat halaman digulir.
     function updateNavigationState() {
       document.body.dataset.navScrolled = String(window.scrollY > 28);
     }
@@ -346,6 +355,7 @@
       });
     }
 
+    // Aksi login/logout menggunakan sesi demo yang hanya tersimpan di browser.
     document.querySelectorAll("[data-account-control]").forEach(function (button) {
       button.addEventListener("click", function () {
         if (getSession()) {
@@ -377,6 +387,7 @@
       document.querySelector("#account-dialog-error").textContent = "";
     });
 
+    // Form masuk hanya memvalidasi nama pengguna dan keberadaan kata sandi demo.
     const loginForm = document.querySelector("#account-form");
     if (loginForm) {
       loginForm.addEventListener("submit", function (event) {
@@ -418,8 +429,11 @@
 
     updateAccountControls();
     initChatbot();
-  });
+  }
 
+  document.addEventListener("DOMContentLoaded", initApp);
+
+  // API bersama yang digunakan oleh skrip tiap halaman.
   window.ARSIP_APP = {
     read: read,
     write: write,

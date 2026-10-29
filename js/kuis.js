@@ -36,6 +36,7 @@
   let startedAt = 0;
   let timerId = 0;
 
+  // Setiap ronde memakai sepuluh soal yang diacak dari bank lokal.
   function sampleRound() {
     const pool = QUESTIONS.slice();
     for (let index = pool.length - 1; index > 0; index -= 1) {
@@ -45,6 +46,7 @@
     return pool.slice(0, 10);
   }
 
+  // Tampilan satu soal dan pilihan jawabannya.
   function renderQuestion() {
     const question = round[current];
     answered = false;
@@ -96,6 +98,7 @@
     ui.next.focus();
   }
 
+  // Papan peringkat menggabungkan skor contoh dan skor lokal akun demo.
   function renderLeaderboard() {
     if (!ui.leaderboard) return;
     const session = APP.getSession();
@@ -152,6 +155,7 @@
     }
   }
 
+  // Siklus kuis: mulai ronde, simpan hasil, lalu tampilkan peringkat.
   function startQuiz() {
     round = sampleRound();
     current = 0;

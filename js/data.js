@@ -1,5 +1,7 @@
 window.ARSIP_DATA = {
+  // Kategori bersama untuk filter arsip komunitas.
   categories: ["Tari", "Musik", "Kerajinan", "Bahasa & Aksara", "Kuliner", "Upacara"],
+  // Data contoh untuk demonstrasi katalog; tandai sebagai fiktif di antarmuka.
   archiveItems: [
     { id: "demo-angklung", title: "Angklung Buhun di Kampung Adat", category: "Musik", origin: "Lebak, Banten", description: "Catatan tentang fungsi angklung dalam siklus pertanian masyarakat Baduy.", source: "Wawancara dan catatan komunitas — contoh untuk prototipe.", username: "jejak_kita", date: "2026-10-12", demo: true },
     { id: "demo-batik", title: "Motif Batik Sekar Jagad", category: "Kerajinan", origin: "Yogyakarta", description: "Dokumentasi awal tentang ragam motif dan cara masyarakat menjelaskannya.", source: "Catatan komunitas — contoh; rujukan khusus perlu diverifikasi.", username: "larasbumi", date: "2026-10-10", demo: true },
@@ -8,6 +10,7 @@ window.ARSIP_DATA = {
     { id: "demo-saman", title: "Tari Saman", category: "Tari", origin: "Gayo Lues, Aceh", description: "Catatan pola gerak, kebersamaan, dan pewarisan tari.", source: "UNESCO dan catatan komunitas — entri khusus perlu diverifikasi.", username: "ratih_nusa", date: "2026-10-01", demo: true },
     { id: "demo-papeda", title: "Papeda dan Cara Mengolahnya", category: "Kuliner", origin: "Papua & Maluku", description: "Catatan pengolahan sagu dan konteks makan bersama.", source: "Penuturan keluarga — contoh; izin dan narasumber perlu diverifikasi.", username: "dapur_timur", date: "2026-09-29", demo: true }
   ],
+  // Bank soal lokal beserta jawaban dan penjelasan setiap pilihan.
   quizQuestions: [
     { category: "Musik", question: "Alat musik angklung menghasilkan bunyi terutama ketika…", options: ["Dipetik seperti kecapi", "Digoyangkan sehingga tabung bambunya bergetar", "Ditiup melalui lubang", "Dipukul dengan pemukul kayu"], answer: 1, explanation: "Tabung-tabung bambu angklung bergetar saat alat digoyangkan." },
     { category: "Kerajinan", question: "Batik tulis dibuat dengan bantuan alat bernama…", options: ["Canting", "Sasando", "Pahat", "Rindik"], answer: 0, explanation: "Canting digunakan untuk menorehkan malam pada kain dalam proses batik tulis." },
@@ -40,6 +43,7 @@ window.ARSIP_DATA = {
     { category: "Kasus dokumentasi", question: "Jika izin atas foto atau rekaman belum jelas, tindakan yang tepat adalah…", options: ["Tetap mengunggah dan berharap tidak masalah", "Tidak memublikasikannya sebelum izin diperoleh", "Menghapus nama pembuat lalu mengunggah", "Membagikan tautan pribadi ke semua orang"], answer: 1, explanation: "Jangan memublikasikan materi sebelum hak atau izin penggunaannya dipastikan." },
     { category: "Kerajinan", question: "Ukiran Jepara dikenal luas sebagai karya kerajinan berbahan…", options: ["Kayu", "Kertas", "Kaca patri", "Kulit kerang saja"], answer: 0, explanation: "Jepara di Jawa Tengah dikenal dengan tradisi ukiran kayu." }
   ],
+  // Versi cerita ringkas untuk prototipe; rujukan masih perlu diverifikasi.
   stories: [
     {
       id: "malin-kundang", title: "Malin Kundang", type: "Legenda", region: "Sumatera Barat", version: "Versi ringkas yang dikenal di Sumatera Barat", minutes: 4,

@@ -1,5 +1,6 @@
 @import url("../lading_page/vars.css");
 
+/* Design tokens and shared page foundations. */
 :root {
   color-scheme: light;
   --ink: #182d2a;
@@ -117,6 +118,7 @@ button {
   margin-inline: auto;
 }
 
+/* Shared header, brand, and responsive navigation. */
 #site-header {
   position: sticky;
   z-index: 30;
@@ -281,6 +283,7 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   color: var(--ink);
 }
 
+/* Landing-page hero, background video, and primary actions. */
 .hero {
   position: relative;
   overflow: hidden;
@@ -501,6 +504,7 @@ body[data-nav-scrolled="true"] .site-nav__toggle {
   transform: none;
 }
 
+/* Page heroes and the archive/story/quiz mascot compositions. */
 .page-hero {
   position: relative;
   overflow: hidden;
@@ -763,6 +767,7 @@ body[data-page="arsip"] .page-hero__copy {
   content: "·";
 }
 
+/* Shared section rhythm and landing-page information showcases. */
 .page-main {
   min-height: 42vh;
   padding-block: clamp(44px, 6vw, 78px) 90px;
@@ -1147,6 +1152,7 @@ body[data-page="arsip"] .page-hero__copy {
   font-size: 21px;
 }
 
+/* Shared search, filters, tabs, cards, and form controls. */
 .content-toolbar {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) auto;
@@ -1441,6 +1447,7 @@ body[data-page="arsip"] .page-hero__copy {
   color: #225c40;
 }
 
+/* Quiz flow, answer states, results, and leaderboard. */
 .quiz-layout {
   display: grid;
   grid-template-columns: minmax(0, 1.35fr) minmax(290px, 0.65fr);
@@ -1658,6 +1665,7 @@ body[data-page="arsip"] .page-hero__copy {
   font-size: 11px;
 }
 
+/* Story cards, reading callout, and story reader. */
 .story-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1777,6 +1785,7 @@ body[data-page="arsip"] .page-hero__copy {
   font-size: 14px;
 }
 
+/* Shared footer and modal account dialog. */
 .site-footer {
   color: var(--paper-light);
   background: var(--ink-deep);
@@ -1897,6 +1906,7 @@ dialog::backdrop {
   text-underline-offset: 3px;
 }
 
+/* Dummy local chatbot launcher and conversation panel. */
 .chat-launcher {
   position: fixed;
   z-index: 30;
@@ -2044,6 +2054,7 @@ dialog::backdrop {
   font-weight: 750;
 }
 
+/* Reader layout and utility elements shared by overlays. */
 .story-reader__stage {
   display: grid;
   grid-template-columns: minmax(110px, 0.38fr) minmax(0, 1fr);
@@ -2140,6 +2151,7 @@ dialog::backdrop {
   clip-path: inset(50%);
 }
 
+/* Tablet and compact desktop layout adjustments. */
 @media (max-width: 900px) {
   .hero__inner {
     grid-template-columns: minmax(0, 1fr);
@@ -2171,6 +2183,7 @@ dialog::backdrop {
   }
 }
 
+/* Mobile navigation and single-column page layouts. */
 @media (max-width: 680px) {
   :root {
     --page-gutter: 20px;
@@ -2472,6 +2485,7 @@ dialog::backdrop {
   }
 }
 
+/* Respect system motion preferences across scroll and mascot animations. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -1,4 +1,5 @@
 (function () {
+  // Kontrol video hanya dipasang pada halaman yang memiliki elemen video hero.
   const video = document.querySelector("#hero-video");
   const toggle = document.querySelector("#hero-video-toggle");
   const status = document.querySelector("#hero-video-status");

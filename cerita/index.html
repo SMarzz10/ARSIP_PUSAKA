@@ -10,8 +10,10 @@
 </head>
 <body data-page="cerita">
   <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <!-- Header, footer, dan fitur akun/chatbot berasal dari common.js. -->
   <div id="site-header"></div>
   <main id="konten">
+    <!-- Hero cerita dan filter katalog cerita lokal. -->
     <header class="page-hero page-hero--mascot">
       <div class="page-hero__inner">
         <div class="page-hero__copy">
@@ -26,6 +28,7 @@
         </div>
       </div>
     </header>
+    <!-- Daftar cerita yang dapat dicari, disaring, dan dibaca per babak. -->
     <section class="page-main">
       <div class="shell">
         <div class="content-toolbar">
@@ -49,6 +52,7 @@
       </div>
     </section>
   </main>
+  <!-- Reader dialog untuk babak cerita, makna, sumber, dan status baca. -->
   <dialog id="story-reader" aria-labelledby="reader-title">
     <div class="dialog__inner">
       <div class="dialog__head"><div><span class="reader-position" id="reader-position"></span><h2 id="reader-title"></h2><p class="field__hint" id="reader-type"></p></div><button class="dialog__close" type="button" id="reader-close" aria-label="Tutup cerita">×</button></div>

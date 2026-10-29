@@ -12,12 +12,14 @@
   let activeChapter = 0;
   let touchStartX = null;
 
+  // Penanda selesai baca dipisahkan per akun demo atau sesi tamu.
   function readStories() {
     const session = APP.getSession();
     const key = session ? APP.accountKey(seenStorageKey, session.username) : seenStorageKey + ":guest";
     return { key: key, ids: APP.read(key, []) };
   }
 
+  // Kartu dan isi reader dibangun lewat DOM agar teks sumber tetap berupa teks.
   function renderCard(story, readIds) {
     const article = document.createElement("article");
     article.className = "story-card";
@@ -63,6 +65,7 @@
     return article;
   }
 
+  // Pencarian dan filter jenis/daerah diterapkan pada bank cerita lokal.
   function renderList() {
     const query = document.querySelector("#story-search").value.trim().toLocaleLowerCase("id");
     const region = document.querySelector("#story-region").value;
@@ -79,6 +82,7 @@
     document.querySelector("#story-count").textContent = filtered.length + " cerita";
   }
 
+  // Reader memperbarui satu babak, sumber, makna, dan kontrol navigasi.
   function renderReader() {
     if (!activeStory) return;
     const isLast = activeChapter === activeStory.chapters.length - 1;
@@ -135,6 +139,7 @@
     renderList();
   }
 
+  // Binding pencarian, filter, reader, dan navigasi sentuh/keyboard.
   document.querySelector("#story-search").addEventListener("input", renderList);
   document.querySelector("#story-region").addEventListener("change", renderList);
   document.querySelectorAll("[data-story-type]").forEach(function (button) {

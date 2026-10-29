@@ -10,8 +10,10 @@
 </head>
 <body data-page="arsip">
   <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <!-- Chrome bersama diisi saat common.js menginisialisasi halaman. -->
   <div id="site-header"></div>
   <main id="konten">
+    <!-- Pengenalan fitur dan maskot arsip. -->
     <header class="page-hero page-hero--mascot">
       <div class="page-hero__inner">
         <div class="page-hero__copy">
@@ -42,6 +44,7 @@
           <button class="button" type="button" id="open-upload">＋ Unggah dokumen</button>
         </div>
 
+        <!-- Arsip publik demo dengan pencarian dan filter kategori. -->
         <section id="archive-community-view" role="tabpanel" aria-labelledby="community-tab">
           <div class="content-toolbar">
             <label class="search-field"><span class="screen-reader-only">Cari arsip</span><input id="archive-search" type="search" placeholder="Cari judul, daerah, atau sumber…" autocomplete="off"></label>
@@ -60,6 +63,7 @@
           <div id="archive-empty" class="empty-state" hidden><h3>Belum ada catatan yang cocok.</h3><p>Ubah kategori atau kata pencarian untuk melihat entri lain.</p></div>
         </section>
 
+        <!-- Unggahan dan skor pribadi tersedia melalui akun demo lokal. -->
         <section id="archive-personal" role="tabpanel" aria-labelledby="personal-tab" hidden>
           <p class="source-note">Unggahan dan skor hanya tersimpan di browser ini. Tidak ada data yang dikirim ke server.</p>
           <div class="tab-list" role="tablist" aria-label="Isi Arsip Saya">
@@ -71,6 +75,7 @@
           <div id="personal-scores" role="tabpanel" hidden></div>
         </section>
 
+        <!-- Form ini menyimpan metadata lokal; berkas tidak diunggah. -->
         <section id="upload-panel" class="form-panel" data-open="false" hidden aria-labelledby="upload-heading">
           <h2 id="upload-heading">Simpan pengetahuan dengan konteksnya.</h2>
           <p class="form-panel__intro">Prototipe ini hanya menyimpan metadata di penyimpanan lokal. Berkas yang dipilih tidak pernah diunggah dan hanya nama, tipe, serta ukuran berkas yang dicatat.</p>

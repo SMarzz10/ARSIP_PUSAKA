@@ -12,6 +12,7 @@
   let activeTab = "community";
   let activeCategory = "Semua";
 
+  // Data arsip dimuat dari penyimpanan lokal; isi awal berasal dari data demo.
   function documents() {
     const stored = APP.read(STORAGE_KEY, null);
     if (Array.isArray(stored)) return stored;
@@ -19,6 +20,7 @@
     return DATA.archiveItems.slice();
   }
 
+  // Membentuk kartu arsip tanpa menyisipkan teks pengguna sebagai HTML.
   function renderArchiveCard(item, mine) {
     const article = document.createElement("article");
     article.className = "archive-card";
@@ -80,6 +82,7 @@
     return article;
   }
 
+  // Riwayat kuis akun ditampilkan sebagai salah satu isi Arsip Saya.
   function renderScoreList(container, session) {
     const scores = session
       ? APP.read(APP.accountKey("arsipPusaka:quiz-history", session.username), [])
@@ -105,6 +108,7 @@
     container.append(list);
   }
 
+  // Menyelaraskan tab, filter, unggahan, dan konten arsip yang terlihat.
   function render() {
     if (!grid || !empty) return;
     const session = APP.getSession();
@@ -161,6 +165,7 @@
     }
   }
 
+  // Interaksi tab, pencarian, filter, dan formulir metadata unggahan.
   document.querySelectorAll("[data-archive-tab]").forEach(function (tab) {
     tab.addEventListener("click", function () {
       if (tab.dataset.archiveTab === "personal" && !APP.requireAccount("Masuk untuk melihat unggahan dan riwayat skor akun demo.")) {
