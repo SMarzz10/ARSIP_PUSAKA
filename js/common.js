@@ -52,7 +52,13 @@
   function updateAccountControls() {
     const session = getSession();
     document.querySelectorAll("[data-account-control]").forEach(function (button) {
-      button.textContent = session ? "@" + session.username + " · Keluar" : "Masuk";
+      if (session) {
+        button.innerHTML = '<img class="account-avatar" src="../aset/logo_login.svg" alt="Akun @' + session.username + '" width="24" height="24">';
+        button.classList.add("site-nav__account--logged-in");
+      } else {
+        button.textContent = "Masuk";
+        button.classList.remove("site-nav__account--logged-in");
+      }
       button.setAttribute("aria-label", session ? "Keluar dari akun @" + session.username : "Masuk ke akun demo");
     });
     document.dispatchEvent(new CustomEvent("arsip:authchange", { detail: { session: session } }));

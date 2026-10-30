@@ -71,16 +71,56 @@
     </section>
 
     <section class="section" id="kasus" aria-labelledby="case-title">
-      <div class="shell">
-        <div class="section-heading">
-          <div><h2 id="case-title">Jejak pengakuan dan upaya pewarisan.</h2></div>
-          <p>Setiap entri memiliki tahun dan konteks berbeda. Pengakuan bersama juga menunjukkan bahwa warisan budaya dapat dirawat lintas komunitas dan negara.</p>
+      <div class="shell heritage-showcase">
+        <div class="heritage-showcase__left">
+          <span class="heritage-showcase__label">■ WARISAN BUDAYA</span>
+          <h2 id="case-title">Jejak pengakuan dan upaya pewarisan.</h2>
+          <p class="heritage-showcase__desc">Setiap entri memiliki tahun dan konteks berbeda. Pengakuan bersama juga menunjukkan bahwa warisan budaya dapat dirawat lintas komunitas dan negara.</p>
+          <figure class="heritage-showcase__video">
+            <a href="../cerita/index.html" class="heritage-showcase__video-link">
+              <img src="../aset/Keberagaman_Indonesia.jpg" alt="Keberagaman budaya Indonesia" width="240" height="180" loading="lazy">
+              <span class="heritage-showcase__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,0.55)"/><polygon points="10,7 18,12 10,17" fill="#fff"/></svg>
+              </span>
+            </a>
+            <figcaption>▶ Jelajahi cerita warisan Nusantara!</figcaption>
+          </figure>
         </div>
-        <div class="case-grid">
-          <article class="case"><span class="case__index">KERAJINAN · 2009</span><h3>Batik</h3><p>Batik Indonesia masuk Daftar Representatif Warisan Budaya Takbenda UNESCO pada 2009. Hari Batik Nasional ditetapkan pada 2 Oktober melalui Keputusan Presiden Nomor 33 Tahun 2009.</p></article>
-          <article class="case"><span class="case__index">PERTUNJUKAN · 2024</span><h3>Reog Ponorogo</h3><p>UNESCO memasukkan seni pertunjukan Reog Ponorogo ke Daftar Warisan Budaya Takbenda yang Membutuhkan Perlindungan Mendesak. Catatan UNESCO menyoroti sulitnya menemukan maestro dan meneruskan keterampilan kepada generasi muda.</p></article>
-          <article class="case"><span class="case__index">MUSIK · 2010</span><h3>Angklung</h3><p>Angklung Indonesia masuk Daftar Representatif UNESCO pada 2010. Permainan ansambelnya mengandalkan kolaborasi agar melodi dapat terbentuk dari nada-nada yang berbeda.</p></article>
-          <article class="case"><span class="case__index">PENGAKUAN BERSAMA</span><h3>Warisan lintas negara</h3><p>Kebaya (2024), Pantun (2025), serta praktik budaya terkait Kolintang dan Balafon (2024) tercatat sebagai pengakuan bersama beberapa negara.</p></article>
+        <div class="heritage-showcase__right">
+          <div class="heritage-showcase__nav" role="group" aria-label="Navigasi kartu warisan">
+            <button class="heritage-nav-btn heritage-nav-btn--prev" type="button" aria-label="Kartu sebelumnya" disabled>‹</button>
+            <button class="heritage-nav-btn heritage-nav-btn--next" type="button" aria-label="Kartu berikutnya">›</button>
+          </div>
+          <div class="heritage-cards" id="heritage-cards" role="region" aria-label="Pengakuan warisan budaya" aria-roledescription="karusel" tabindex="0">
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="../lading_page/Batik.jpg" alt="Motif batik megamendung" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">Batik Indonesia masuk Daftar Representatif Warisan Budaya Takbenda UNESCO pada 2009. Hari Batik Nasional ditetapkan pada 2 Oktober melalui Keputusan Presiden Nomor 33 Tahun 2009.</p>
+              <h3 class="heritage-card__title">Batik</h3>
+              <span class="heritage-card__sub">Kerajinan · Diakui 2009</span>
+            </article>
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="../lading_page/Reog_Ponorogo.jpg" alt="Penari Reog Ponorogo" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">UNESCO memasukkan seni pertunjukan Reog Ponorogo ke Daftar Warisan Budaya Takbenda yang Membutuhkan Perlindungan Mendesak. Catatan UNESCO menyoroti sulitnya menemukan maestro dan meneruskan keterampilan kepada generasi muda.</p>
+              <h3 class="heritage-card__title">Reog Ponorogo</h3>
+              <span class="heritage-card__sub">Pertunjukan · Diakui 2024</span>
+            </article>
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="../lading_page/Angklung.jpg" alt="Instrumen angklung bambu" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">Angklung Indonesia masuk Daftar Representatif UNESCO pada 2010. Permainan ansambelnya mengandalkan kolaborasi agar melodi dapat terbentuk dari nada-nada yang berbeda.</p>
+              <h3 class="heritage-card__title">Angklung</h3>
+              <span class="heritage-card__sub">Musik · Diakui 2010</span>
+            </article>
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="../lading_page/warisan.jpg" alt="Peta Indonesia dalam kaca pembesar" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">Kebaya (2024), Pantun (2025), serta praktik budaya terkait Kolintang dan Balafon (2024) tercatat sebagai pengakuan bersama beberapa negara.</p>
+              <h3 class="heritage-card__title">Warisan lintas negara</h3>
+              <span class="heritage-card__sub">Pengakuan Bersama</span>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -166,5 +206,6 @@
   <script src="../js/data.js" defer></script>
   <script src="../js/common.js" defer></script>
   <script src="../js/hero-video.js" defer></script>
+  <script src="../js/heritage-carousel.js" defer></script>
 </body>
 </html>
