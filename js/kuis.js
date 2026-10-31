@@ -135,14 +135,71 @@
     ui.leaderboard.replaceChildren();
     rows.forEach(function (row) {
       const tr = document.createElement("tr");
+      tr.className = "leaderboard__row";
       const isCurrent = Boolean(session && row.username.toLowerCase() === session.username.toLowerCase());
-      const cells = [String(sorted.indexOf(row) + 1), "@" + row.username + (row.demo ? " · contoh" : ""), String(row.score), APP.formatTime(row.seconds), APP.formatDate(row.date)];
-      cells.forEach(function (value, index) {
+      const rank = sorted.indexOf(row) + 1;
+
+      // Kolom 1: Peringkat / Lambang Top 1, 2, 3
+      const rankCell = document.createElement("td");
+      const rankWrap = document.createElement("span");
+      rankWrap.className = "leaderboard__rank";
+
+      if (rank >= 1 && rank <= 3) {
+        tr.classList.add("leaderboard__row--top" + rank);
+        rankWrap.classList.add("leaderboard__rank--badge", "leaderboard__rank--top" + rank);
+        const badge = document.createElement("img");
+        badge.className = "leaderboard__badge";
+        badge.src = "top/top" + rank + ".png";
+        badge.alt = "Peringkat " + rank;
+        badge.title = "Peringkat " + rank;
+        badge.width = 30;
+        badge.height = 30;
+        badge.loading = "lazy";
+        rankWrap.append(badge);
+      } else {
+        rankWrap.textContent = String(rank);
+      }
+      rankCell.append(rankWrap);
+      tr.append(rankCell);
+
+      const otherCells = [
+        "@" + row.username + (row.demo ? " · contoh" : ""),
+        String(row.score),
+        APP.formatTime(row.seconds),
+        APP.formatDate(row.date)
+      ];
+      otherCells.forEach(function (value) {
         const cell = document.createElement("td");
         cell.textContent = value;
         tr.append(cell);
       });
       tr.dataset.current = String(isCurrent);
+
+      // Efek interaktif: membesar saat diklik
+      tr.tabIndex = 0;
+      tr.setAttribute("role", "button");
+      tr.setAttribute("aria-label", "Peringkat " + rank + ", " + row.username + ", skor " + row.score);
+      tr.setAttribute("aria-pressed", "false");
+
+      tr.addEventListener("click", function () {
+        const wasSelected = tr.classList.contains("is-selected");
+        ui.leaderboard.querySelectorAll(".leaderboard__row").forEach(function (otherTr) {
+          otherTr.classList.remove("is-selected");
+          otherTr.setAttribute("aria-pressed", "false");
+        });
+        if (!wasSelected) {
+          tr.classList.add("is-selected");
+          tr.setAttribute("aria-pressed", "true");
+        }
+      });
+
+      tr.addEventListener("keydown", function (event) {
+        if (event.key === "Enter" || event.key === " ") {
+          event.preventDefault();
+          tr.click();
+        }
+      });
+
       ui.leaderboard.append(tr);
     });
     if (!rows.length) {

@@ -15,9 +15,23 @@
   // Data arsip dimuat dari penyimpanan lokal; isi awal berasal dari data demo.
   function documents() {
     const stored = APP.read(STORAGE_KEY, null);
-    if (Array.isArray(stored)) return stored;
-    APP.write(STORAGE_KEY, DATA.archiveItems.slice());
-    return DATA.archiveItems.slice();
+    if (!Array.isArray(stored)) {
+      APP.write(STORAGE_KEY, DATA.archiveItems.slice());
+      return DATA.archiveItems.slice();
+    }
+    // Pastikan data demo di penyimpanan lokal memiliki properti terbaru (seperti gambar).
+    let updated = false;
+    const synced = stored.map(function (item) {
+      if (!item.demo) return item;
+      const original = DATA.archiveItems.find(function (demo) { return demo.id === item.id; });
+      if (original && original.image && item.image !== original.image) {
+        updated = true;
+        return Object.assign({}, item, { image: original.image });
+      }
+      return item;
+    });
+    if (updated) APP.write(STORAGE_KEY, synced);
+    return synced;
   }
 
   // Membentuk kartu arsip tanpa menyisipkan teks pengguna sebagai HTML.
@@ -25,6 +39,21 @@
     const article = document.createElement("article");
     article.className = "archive-card";
     article.dataset.category = item.category;
+
+    if (item.image) {
+      const media = document.createElement("div");
+      media.className = "archive-card__media";
+      const img = document.createElement("img");
+      img.className = "archive-card__image";
+      img.src = item.image;
+      img.alt = "Ilustrasi " + item.title;
+      img.loading = "lazy";
+      media.append(img);
+      article.append(media);
+    }
+
+    const body = document.createElement("div");
+    body.className = "archive-card__body";
 
     const top = document.createElement("div");
     top.className = "archive-card__top";
@@ -67,18 +96,29 @@
       remove.setAttribute("aria-label", "Hapus unggahan " + item.title);
       remove.addEventListener("click", function () {
         const session = APP.getSession();
-        if (!session || !window.confirm("Hapus metadata unggahan “" + item.title + "” dari browser ini?")) return;
-        const remaining = documents().filter(function (documentItem) {
-          return documentItem.id !== item.id || documentItem.username.toLowerCase() !== session.username.toLowerCase();
+        if (!session) return;
+        APP.confirm({
+          title: "Hapus Metadata?",
+          message: "Hapus metadata unggahan “" + item.title + "” dari browser ini?",
+          hint: "Tindakan ini menghapus catatan dari penyimpanan perangkat ini.",
+          okText: "Hapus",
+          cancelText: "Batal",
+          tone: "danger"
+        }).then(function (confirmed) {
+          if (!confirmed) return;
+          const remaining = documents().filter(function (documentItem) {
+            return documentItem.id !== item.id || documentItem.username.toLowerCase() !== session.username.toLowerCase();
+          });
+          if (APP.write(STORAGE_KEY, remaining)) {
+            APP.notify("Metadata unggahan telah dihapus dari perangkat ini.", "success");
+            render();
+          }
         });
-        if (APP.write(STORAGE_KEY, remaining)) {
-          APP.notify("Metadata unggahan telah dihapus dari perangkat ini.", "success");
-          render();
-        }
       });
       foot.append(remove);
     }
-    article.append(top, title, description, meta, source, foot);
+    body.append(top, title, description, meta, source, foot);
+    article.append(body);
     return article;
   }
 

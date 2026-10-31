@@ -3,10 +3,211 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="refresh" content="0; url=lading_page/index.html">
-  <title>Arsip Pusaka</title>
+  <meta name="theme-color" content="#182d2a">
+  <meta name="description" content="Kenali, catat, uji, dan wariskan pengetahuan budaya Nusantara bersama Arsip Pusaka.">
+  <link rel="icon" href="LOGO.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+  <title>Arsip Pusaka — Kenali · Catat · Wariskan</title>
 </head>
-<body>
-  <p>Membuka <a href="lading_page/index.html">Beranda Arsip Pusaka</a>…</p>
+<body data-page="beranda" data-base="">
+  <!-- THESIS: Arsip budaya menjadi tindakan warga, bukan katalog kosong; halaman generik dengan klaim pelestarian tanpa sumber ditolak.
+       OWN-WORLD: Hijau hutan, kertas terang, aksen emas dan cap arsip; garis inventaris dan kartu katalog mengikat navigasi, bukti, dan interaksi.
+       STORY: Pengunjung memahami mengapa catatan berizin penting, memeriksa status bukti, lalu memilih mengarsipkan, belajar, atau membaca.
+       FIRST VIEWPORT: Pernyataan editorial di kiri dan ruang media arsip di kanan; aksi arsip dan cerita langsung terlihat.
+       FORM: Peringkat pertama ialah dossier arsip komunitas beralur; dipilih karena mendemonstrasikan dokumentasi sebagai mekanisme, bukan statistik rekaan. -->
+  <a class="skip-link" href="#konten">Lewati ke konten</a>
+  <!-- Header, footer, dan dialog bersama dipasang oleh common.js. -->
+  <div id="site-header"></div>
+  <main id="konten">
+    <!-- Pernyataan utama dan pintasan ke fitur inti. -->
+    <section class="hero hero--video" aria-labelledby="hero-title">
+      <div class="hero__video-backdrop" aria-hidden="true">
+        <video class="hero__video" id="hero-video" autoplay muted loop playsinline preload="metadata" poster="aset/hero-poster.jpg">
+          <source src="hero_section1.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="hero__eyebrow">PUSAKA · Warisan Budaya &amp; Seni</p>
+          <h1 class="hero__title" id="hero-title">Yang tak dicatat, <em>mudah dilupakan.</em></h1>
+          <p class="hero__lead">Budaya hidup melalui ingatan, dan bertahan melalui catatan. Mari kenali, dokumentasikan dengan izin, dan wariskan pengetahuan dari lingkungan terdekat.</p>
+          <div class="hero__actions">
+            <a class="button button--gold" href="arsip/index.html">Arsipkan budayamu <span aria-hidden="true">↗</span></a>
+            <a class="button button--outline" href="cerita/index.html">Jelajahi cerita</a>
+          </div>
+        </div>
+      </div>
+      <span class="screen-reader-only" id="hero-video-status" role="status" aria-live="polite"></span>
+    </section>
+
+    <!-- Data ringkas dilengkapi lembaga, cakupan, dan periode sumber. -->
+    <section class="section section--compact" aria-labelledby="data-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div>
+            <h2 id="data-title">Warisan hidup perlu dikenal dan dicatat.</h2>
+          </div>
+          <p>Angka berikut disertai lembaga, cakupan, dan periode datanya agar dapat diperiksa kembali.</p>
+        </div>
+        <div class="stats" aria-label="Data budaya dengan sumber">
+          <article class="stat"><div class="stat__value" data-count="16">16</div><div class="stat__label">elemen budaya Indonesia tercatat pada daftar dan register UNESCO</div><div class="stat__source"><a href="https://ich.unesco.org/en/state/indonesia-ID" target="_blank" rel="noreferrer">UNESCO · halaman Indonesia</a> · per Oktober 2026</div></article>
+          <article class="stat"><div class="stat__value" data-count="718">718</div><div class="stat__label">bahasa daerah dipetakan oleh Badan Bahasa</div><div class="stat__source"><a href="https://m.antaranews.com/amp/berita/1129799/kemendikbud-petakan-718-bahasa-daerah" target="_blank" rel="noreferrer">ANTARA · pemetaan 1991–2019</a></div></article>
+          <article class="stat"><div class="stat__value" data-count="11">11</div><div class="stat__label">bahasa tercatat punah dari 74 bahasa yang dikaji vitalitasnya</div><div class="stat__source"><a href="https://m.antaranews.com/amp/berita/1129799/kemendikbud-petakan-718-bahasa-daerah" target="_blank" rel="noreferrer">ANTARA · data Badan Bahasa, 1991–2019</a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Konteks kebutuhan dokumentasi dan contoh pengakuan budaya. -->
+    <section class="section section--paper" aria-labelledby="why-title">
+      <div class="shell">
+        <div class="section-heading">
+          <div><h2 id="why-title">PUSAKA: warisan budaya dan seni dirawat bersama.</h2></div>
+        </div>
+        <div class="case-grid">
+          <article class="case"><span class="case__index">01 · PENGETAHUAN</span><h3>Dokumentasi lemah</h3><p>Pengetahuan yang diwariskan lisan perlu dicatat dengan cara yang menghormati penutur.</p></article>
+          <article class="case"><span class="case__index">02 · SUMBER</span><h3>Arsip berserakan</h3><p>Foto, rekaman, dan catatan mudah kehilangan asal serta konteks bila disimpan sendiri-sendiri.</p></article>
+          <article class="case"><span class="case__index">03 · KETERLIBATAN</span><h3>Merawat bersama</h3><p>Pelestarian dapat dimulai dari lingkungan dekat dengan meminta izin dan melibatkan komunitas.</p></article>
+          <article class="case"><span class="case__index">04 · CARA BICARA</span><h3>Netral dan solutif</h3><p>Perbincangan tentang tayangan Tari Pendet pada 2009 mengingatkan pentingnya memeriksa atribusi dan mencatat koreksi dengan cermat.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kasus" aria-labelledby="case-title">
+      <div class="shell heritage-showcase">
+        <div class="heritage-showcase__left">
+          <span class="heritage-showcase__label">■ WARISAN BUDAYA</span>
+          <h2 id="case-title">Jejak pengakuan dan upaya pewarisan.</h2>
+          <p class="heritage-showcase__desc">Setiap entri memiliki tahun dan konteks berbeda. Pengakuan bersama juga menunjukkan bahwa warisan budaya dapat dirawat lintas komunitas dan negara.</p>
+          <figure class="heritage-showcase__video">
+            <a href="cerita/index.html" class="heritage-showcase__video-link">
+              <img src="aset/Keberagaman_Indonesia.jpg" alt="Keberagaman budaya Indonesia" width="240" height="180" loading="lazy">
+              <span class="heritage-showcase__play" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><circle cx="12" cy="12" r="12" fill="rgba(0,0,0,0.55)"/><polygon points="10,7 18,12 10,17" fill="#fff"/></svg>
+              </span>
+            </a>
+            <figcaption>▶ Jelajahi cerita warisan Nusantara!</figcaption>
+          </figure>
+        </div>
+        <div class="heritage-showcase__right">
+          <div class="heritage-showcase__nav" role="group" aria-label="Navigasi kartu warisan">
+            <button class="heritage-nav-btn heritage-nav-btn--prev" type="button" aria-label="Kartu sebelumnya" disabled>‹</button>
+            <button class="heritage-nav-btn heritage-nav-btn--next" type="button" aria-label="Kartu berikutnya">›</button>
+          </div>
+          <div class="heritage-cards" id="heritage-cards" role="region" aria-label="Pengakuan warisan budaya" aria-roledescription="karusel" tabindex="0">
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="aset/Batik.jpg" alt="Motif batik megamendung" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">Batik Indonesia masuk Daftar Representatif Warisan Budaya Takbenda UNESCO pada 2009. Hari Batik Nasional ditetapkan pada 2 Oktober melalui Keputusan Presiden Nomor 33 Tahun 2009.</p>
+              <h3 class="heritage-card__title">Batik</h3>
+              <span class="heritage-card__sub">Kerajinan · Diakui 2009</span>
+            </article>
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="aset/Reog_Ponorogo.jpg" alt="Penari Reog Ponorogo" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">UNESCO memasukkan seni pertunjukan Reog Ponorogo ke Daftar Warisan Budaya Takbenda yang Membutuhkan Perlindungan Mendesak. Catatan UNESCO menyoroti sulitnya menemukan maestro dan meneruskan keterampilan kepada generasi muda.</p>
+              <h3 class="heritage-card__title">Reog Ponorogo</h3>
+              <span class="heritage-card__sub">Pertunjukan · Diakui 2024</span>
+            </article>
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="aset/Angklung.jpg" alt="Instrumen angklung bambu" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">Angklung Indonesia masuk Daftar Representatif UNESCO pada 2010. Permainan ansambelnya mengandalkan kolaborasi agar melodi dapat terbentuk dari nada-nada yang berbeda.</p>
+              <h3 class="heritage-card__title">Angklung</h3>
+              <span class="heritage-card__sub">Musik · Diakui 2010</span>
+            </article>
+            <article class="heritage-card" role="group" aria-roledescription="kartu">
+              <img class="heritage-card__avatar" src="aset/warisan.jpg" alt="Peta Indonesia dalam kaca pembesar" width="56" height="56" loading="lazy">
+              <span class="heritage-card__quote" aria-hidden="true">❝</span>
+              <p class="heritage-card__text">Kebaya (2024), Pantun (2025), serta praktik budaya terkait Kolintang dan Balafon (2024) tercatat sebagai pengakuan bersama beberapa negara.</p>
+              <h3 class="heritage-card__title">Warisan lintas negara</h3>
+              <span class="heritage-card__sub">Pengakuan Bersama</span>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Empat langkah dokumentasi budaya yang bertanggung jawab. -->
+    <section class="section section--paper process-showcase" aria-labelledby="steps-title">
+      <div class="shell process-showcase__layout">
+        <div class="process-showcase__copy">
+          <h2 id="steps-title">Catat dengan cara yang bertanggung jawab.</h2>
+          <p>Catatan yang baik menyebut asal dan sumber, meminta izin, serta memberi ruang pada komunitas untuk menjelaskan tradisinya sendiri.</p>
+          <figure class="process-showcase__art">
+            <img src="aset/Keberagaman_Indonesia.jpg" alt="Para penari mengenakan kostum tradisional dalam pertunjukan budaya Indonesia" width="736" height="491" loading="lazy">
+          </figure>
+        </div>
+        <div class="process-steps" aria-label="Langkah mencatat budaya">
+          <article class="process-step">
+            <span class="process-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.4"></circle><path d="m16 16 4.2 4.2M8.2 10.8h5.2M10.8 8.2v5.2"></path></svg></span>
+            <div><h3>Pilih</h3><p>Mulai dari tradisi, karya, bahasa, atau cerita yang dekat.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5.5h16v11H11l-5 3v-3H4z"></path><path d="M8 10h8M8 13h5"></path></svg></span>
+            <div><h3>Minta izin</h3><p>Jelaskan tujuan dan minta persetujuan pelaku budaya atau narasumber.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3.8h8l4 4v12.4H6z"></path><path d="M14 3.8v4h4M9 12h6M9 15.5h6"></path></svg></span>
+            <div><h3>Catat konteks</h3><p>Tuliskan asal, tanggal, versi, dan sumber yang dapat diperiksa.</p></div>
+          </article>
+          <article class="process-step">
+            <span class="process-step__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20.2V8.5M12 12.2c0-4.1-2.6-6.2-6.6-6.2 0 4 2.2 6.2 6.6 6.2ZM12 15c0-4.5 2.7-7 7-7 0 4.4-2.4 7-7 7ZM5 20.2h14"></path></svg></span>
+            <div><h3>Wariskan</h3><p>Simpan dengan rapi agar dapat dipelajari dan diwariskan kembali.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accordion menghubungkan fitur Arsip, Kuis, dan Cerita. -->
+    <section class="section section--paper feature-showcase" aria-labelledby="feature-title">
+      <div class="shell feature-showcase__layout">
+        <div class="feature-showcase__copy">
+          <h2 id="feature-title">Temukan cara merawat budaya bersama.</h2>
+          <figure class="feature-showcase__art">
+            <img src="MASKOT/arsip.png" alt="Maskot Arsip Pusaka menjaga catatan budaya" width="677" height="369" loading="lazy">
+          </figure>
+        </div>
+        <div class="feature-list" aria-label="Fitur Arsip Pusaka">
+          <details class="feature-item" name="landing-feature" open>
+            <summary class="feature-item__summary"><span>Arsip komunitas</span><span class="feature-item__toggle" aria-hidden="true">+</span></summary>
+            <div class="feature-item__content"><p>Catat tradisi, asal, sumber, dan izin agar pengetahuan budaya tersimpan dengan konteks yang jelas.</p><a class="feature-item__link" href="arsip/index.html">Mulai mengarsipkan <span aria-hidden="true">↗</span></a></div>
+          </details>
+          <details class="feature-item" name="landing-feature">
+            <summary class="feature-item__summary"><span>Kuis budaya</span><span class="feature-item__toggle" aria-hidden="true">+</span></summary>
+            <div class="feature-item__content"><p>Uji wawasan tentang budaya Nusantara lewat pertanyaan singkat dengan penjelasan di setiap jawaban.</p><a class="feature-item__link" href="kuis/index.html">Coba kuis <span aria-hidden="true">↗</span></a></div>
+          </details>
+          <details class="feature-item" name="landing-feature">
+            <summary class="feature-item__summary"><span>Cerita Nusantara</span><span class="feature-item__toggle" aria-hidden="true">+</span></summary>
+            <div class="feature-item__content"><p>Jelajahi cerita dalam beragam versi, dengan ruang untuk mengenal asal dan konteks penuturannya.</p><a class="feature-item__link" href="cerita/index.html">Jelajahi cerita <span aria-hidden="true">↗</span></a></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rujukan data dan catatan konteks editorial. -->
+    <section class="section section--compact" id="sumber" aria-labelledby="sources-title">
+      <div class="shell">
+        <div class="section-heading"><div><h2 id="sources-title">Sumber dan konteks data.</h2></div><p>Rujukan primer dipakai untuk tahun dan status UNESCO; data bahasa mengacu pada pemetaan Badan Bahasa yang diberitakan ANTARA.</p></div>
+        <ul class="source-list">
+          <li><a href="https://ich.unesco.org/en/state/indonesia-ID" target="_blank" rel="noreferrer">UNESCO · Daftar Indonesia</a><small>16 entri; status dan tahun tiap unsur. Diakses 27 Oktober 2026.</small></li>
+          <li><a href="https://ich.unesco.org/en/USL/reog-ponorogo-performing-art-01969" target="_blank" rel="noreferrer">UNESCO · Reog Ponorogo</a><small>Daftar Perlindungan Mendesak, 2024.</small></li>
+          <li><a href="https://ich.unesco.org/en/RL/indonesian-batik-00170" target="_blank" rel="noreferrer">UNESCO · Batik Indonesia</a><small>Daftar Representatif, 2009.</small></li>
+          <li><a href="https://ich.unesco.org/en/RL/indonesian-angklung-00393" target="_blank" rel="noreferrer">UNESCO · Angklung Indonesia</a><small>Daftar Representatif, 2010.</small></li>
+          <li><a href="https://m.antaranews.com/amp/berita/1129799/kemendikbud-petakan-718-bahasa-daerah" target="_blank" rel="noreferrer">ANTARA · Pemetaan Badan Bahasa</a><small>718 bahasa dipetakan; dari 74 yang dikaji vitalitasnya, 11 tercatat punah (data 1991–2019).</small></li>
+          <li><a href="https://id.wikisource.org/wiki/Halaman:Keppre_33_2009.djvu/1" target="_blank" rel="noreferrer">Keputusan Presiden Nomor 33 Tahun 2009</a><small>Menetapkan 2 Oktober sebagai Hari Batik Nasional; bukan hari libur.</small></li>
+          <li><a href="https://ich.unesco.org/en/RL/kebaya-knowledge-skills-traditions-and-practices-02090" target="_blank" rel="noreferrer">UNESCO · Kebaya (2024)</a>, <a href="https://ich.unesco.org/en/RL/pantun-02274" target="_blank" rel="noreferrer">Pantun (2025)</a>, <a href="https://ich.unesco.org/en/RL/cultural-practices-and-expressions-linked-to-balafon-and-kolintang-in-mali-burkina-faso-cote-d-ivoire-and-indonesia-02131" target="_blank" rel="noreferrer">Kolintang dan Balafon (2024)</a><small>Entri multinasional; lihat daftar negara pada tiap halaman UNESCO.</small></li>
+          <li><a href="https://www.malaysiakini.com/news/111938" target="_blank" rel="noreferrer">Malaysiakini · Catatan tayangan Pendet, 2009</a>, <a href="https://nu.or.id/news/ri-sends-protest-to-malaysia-over-pendet-dance-ad-3FP1o" target="_blank" rel="noreferrer">NU Online · Catatan klarifikasi, 2009</a><small>Sumber sekunder untuk konteks atribusi; dibaca secara netral dan tidak digunakan untuk menyalahkan pihak mana pun.</small></li>
+        </ul>
+        <p class="source-note">Data dan halaman sumber diperiksa 27 Oktober 2026. Angka UNESCO dapat berubah bila ada inskripsi baru; jumlah bahasa mengikuti periode pemetaan yang tertulis pada sumber.</p>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+  <div id="site-overlays"></div>
+  <div id="site-toast" class="toast" role="status" aria-live="polite" hidden></div>
+  <script src="js/data.js" defer></script>
+  <script src="js/common.js" defer></script>
+  <script src="js/hero-video.js" defer></script>
+  <script src="js/heritage-carousel.js" defer></script>
 </body>
 </html>

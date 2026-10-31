@@ -1,0 +1,10 @@
+Font di folder ini disertakan agar situs tidak bergantung pada CDN.
+
+1. DM Sans — Copyright 2014 The DM Sans Project Authors.
+   Lisensi: SIL Open Font License 1.1 — https://openfontlicense.org
+
+2. Libre Caslon Display — Copyright 2017 The Libre Caslon Display Project Authors.
+   Lisensi: SIL Open Font License 1.1 — https://openfontlicense.org
+
+Keduanya bebas digunakan, termasuk untuk proyek lomba, selama lisensi OFL
+dipertahankan. Berkas woff2 di sini adalah subset latin dari Google Fonts.

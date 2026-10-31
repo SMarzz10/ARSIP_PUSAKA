@@ -1,6 +1,9 @@
 (function () {
   "use strict";
 
+  // Basis path: beranda di akar memakai "", halaman lain memakai "../".
+  const BASE = document.body.dataset.base !== undefined ? document.body.dataset.base : "../";
+
   // Kunci dan status penyimpanan lokal untuk akun demo.
   const SESSION_KEY = "arsipPusaka:session";
   const toastElement = document.querySelector("#site-toast");
@@ -53,7 +56,7 @@
     const session = getSession();
     document.querySelectorAll("[data-account-control]").forEach(function (button) {
       if (session) {
-        button.innerHTML = '<img class="account-avatar" src="../aset/logo_login.svg" alt="Akun @' + session.username + '" width="24" height="24">';
+        button.innerHTML = '<img class="account-avatar" src="' + BASE + 'aset/logo_login.svg" alt="Akun @' + session.username + '" width="24" height="24">';
         button.classList.add("site-nav__account--logged-in");
       } else {
         button.textContent = "Masuk";
@@ -62,6 +65,66 @@
       button.setAttribute("aria-label", session ? "Keluar dari akun @" + session.username : "Masuk ke akun demo");
     });
     document.dispatchEvent(new CustomEvent("arsip:authchange", { detail: { session: session } }));
+  }
+
+  function getPageMascot() {
+    const page = document.body.dataset.page || "beranda";
+    if (page === "kuis") return BASE + "MASKOT/kuis.png";
+    if (page === "cerita") return BASE + "MASKOT/cerita.png";
+    return BASE + "MASKOT/arsip.png";
+  }
+
+  let confirmResolver = null;
+
+  function askConfirm(options) {
+    return new Promise(function (resolve) {
+      confirmResolver = resolve;
+      const dialog = document.querySelector("#confirm-dialog");
+      if (!dialog) {
+        resolve(window.confirm(options.message || "Apakah Anda yakin?"));
+        return;
+      }
+      const titleEl = document.querySelector("#confirm-dialog-title");
+      const msgEl = document.querySelector("#confirm-dialog-message");
+      const hintEl = document.querySelector("#confirm-dialog-hint");
+      const mascotEl = document.querySelector("#confirm-dialog-mascot");
+      const okBtn = document.querySelector("#confirm-dialog-ok");
+      const cancelBtn = document.querySelector("#confirm-dialog-cancel");
+
+      if (titleEl) titleEl.textContent = options.title || "Konfirmasi";
+      if (msgEl) {
+        if (options.user) {
+          msgEl.innerHTML = "Keluar dari akun demo <strong>@" + options.user + "</strong>?";
+        } else if (options.message) {
+          msgEl.textContent = options.message;
+        } else {
+          msgEl.textContent = "Apakah Anda yakin?";
+        }
+      }
+      if (hintEl) {
+        hintEl.textContent = options.hint || "";
+        hintEl.hidden = !options.hint;
+      }
+      if (mascotEl) {
+        mascotEl.src = options.mascot || getPageMascot();
+      }
+      if (okBtn) {
+        okBtn.textContent = options.okText || "Ya, lanjutkan";
+        if (options.tone === "danger") {
+          okBtn.className = "button button--danger confirm-dialog__btn-ok";
+        } else {
+          okBtn.className = "button button--gold confirm-dialog__btn-ok";
+        }
+      }
+      if (cancelBtn) {
+        cancelBtn.textContent = options.cancelText || "Batal";
+      }
+
+      if (!dialog.open) {
+        dialog.showModal();
+        if (okBtn) okBtn.focus();
+      }
+    });
   }
 
   function accountDialog(showForm) {
@@ -92,38 +155,51 @@
     const footer = document.querySelector("#site-footer");
     const overlays = document.querySelector("#site-overlays");
     const page = document.body.dataset.page || "beranda";
+    // Path markup bersama mengikuti lokasi halaman: akar proyek atau subfolder.
+    function scope(markup) {
+      return markup.replace(/\.\.\//g, BASE);
+    }
     if (header) {
-      header.innerHTML =
+      header.innerHTML = scope(
         '<header class="site-header"><div class="shell site-header__inner">' +
-        '<a class="brand" href="../lading_page/index.html" aria-label="Arsip Pusaka, Beranda"><img class="brand__mark" src="../LOGO.png" alt=""><span class="brand__text"><span class="brand__name">ARSIP PUSAKA</span><span class="brand__tagline">Kenali · Catat · Wariskan</span></span></a>' +
+        '<a class="brand" href="../index.html" aria-label="Arsip Pusaka, Beranda"><img class="brand__mark" src="../LOGO.png" alt=""><span class="brand__text"><span class="brand__name">ARSIP PUSAKA</span><span class="brand__tagline">Kenali · Catat · Wariskan</span></span></a>' +
         '<button class="site-nav__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Buka navigasi">☰</button>' +
         '<nav class="site-nav" id="site-nav" aria-label="Navigasi utama" data-open="false">' +
-        '<a class="site-nav__link" href="../lading_page/index.html" ' + (page === "beranda" ? 'aria-current="page"' : "") + '>Beranda</a>' +
+        '<a class="site-nav__link" href="../index.html" ' + (page === "beranda" ? 'aria-current="page"' : "") + '>Beranda</a>' +
         '<a class="site-nav__link" href="../arsip/index.html" ' + (page === "arsip" ? 'aria-current="page"' : "") + '>Arsip</a>' +
         '<a class="site-nav__link" href="../kuis/index.html" ' + (page === "kuis" ? 'aria-current="page"' : "") + '>Kuis</a>' +
         '<a class="site-nav__link" href="../cerita/index.html" ' + (page === "cerita" ? 'aria-current="page"' : "") + '>Cerita</a>' +
-        '<button class="site-nav__account" type="button" data-account-control>Masuk</button></nav></div></header>';
+        '<button class="site-nav__account" type="button" data-account-control>Masuk</button></nav></div></header>');
     }
     if (footer) {
-      footer.innerHTML =
+      footer.innerHTML = scope(
         '<footer class="site-footer"><div class="shell site-footer__inner">' +
         '<section><h2>Arsip Pusaka</h2><p>Rawat yang kita warisi. Wariskan yang kita rawat. Dokumentasikan budaya dengan sumber, konteks, dan izin yang jelas.</p></section>' +
-        '<section><h2>Jelajahi</h2><ul><li><a href="../lading_page/index.html">Beranda</a></li><li><a href="../arsip/index.html">Arsip komunitas</a></li><li><a href="../kuis/index.html">Kuis budaya</a></li><li><a href="../cerita/index.html">Cerita Nusantara</a></li></ul></section>' +
+        '<section><h2>Jelajahi</h2><ul><li><a href="../index.html">Beranda</a></li><li><a href="../arsip/index.html">Arsip komunitas</a></li><li><a href="../kuis/index.html">Kuis budaya</a></li><li><a href="../cerita/index.html">Cerita Nusantara</a></li></ul></section>' +
         '<section><h2>Catatan prototipe</h2><p>Akun, metadata arsip, skor, penanda baca, dan peringkat adalah demo lokal di browser ini. Contoh bukan data komunitas nyata; statistik dan sumber khusus perlu diverifikasi sebelum publikasi.</p></section>' +
-        '</div><div class="shell site-footer__bottom"><span>© 2026 Arsip Pusaka · TECHTOPIA Vol. 2</span><span>Pendidikan Berbasis Lokal · Warisan Budaya & Seni</span></div></footer>';
+        '</div><div class="shell site-footer__bottom"><span>© 2026 Arsip Pusaka · TECHTOPIA Vol. 2</span><span>Pendidikan Berbasis Lokal · Warisan Budaya & Seni</span></div></footer>');
     }
     if (overlays) {
-      overlays.innerHTML =
+      overlays.innerHTML = scope(
         '<dialog id="account-dialog" aria-labelledby="account-dialog-title"><div class="dialog__inner">' +
         '<div class="dialog__head"><h2 id="account-dialog-title">Masuk ke Arsip Pusaka</h2><button class="dialog__close" type="button" data-close-account aria-label="Tutup">×</button></div>' +
         '<p class="dialog__copy">Akun demo menghubungkan unggahan dan skor pada perangkat ini saja. Kata sandi hanya pajangan: tidak dikirim dan tidak disimpan.</p>' +
         '<form id="account-form" autocomplete="off"><div class="form-grid"><div class="field field--full"><label for="account-username">Nama pengguna</label><input id="account-username" name="username" type="text" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]{3,20}" autocomplete="username" required aria-describedby="account-name-hint"><span class="field__hint" id="account-name-hint">3–20 karakter: huruf, angka, atau garis bawah.</span></div><div class="field field--full"><label for="account-password">Kata sandi demo</label><input id="account-password" name="password" type="password" autocomplete="off" required><span class="field__hint">Kolom ini tidak pernah disimpan atau dikirim.</span></div></div><p id="account-dialog-error" class="status-message" role="alert"></p><div class="form-actions"><button class="button button--gold" type="submit">Masuk</button><button class="button button--quiet" type="button" data-close-account>Batal</button></div></form>' +
         '<div id="account-signed-in" hidden><p class="account-state">Sedang masuk sebagai <span class="account-state__name" id="signed-in-name"></span>.</p><p class="field__hint">Sesi demo berlaku di browser ini. Tidak ada akun server.</p></div>' +
         '</div></dialog>' +
+        '<dialog id="confirm-dialog" class="confirm-dialog" aria-labelledby="confirm-dialog-title" aria-modal="true"><div class="confirm-dialog__inner">' +
+        '<button class="dialog__close confirm-dialog__close" type="button" data-confirm-cancel aria-label="Tutup">×</button>' +
+        '<div class="confirm-dialog__mascot-wrap"><img id="confirm-dialog-mascot" class="confirm-dialog__mascot" src="../MASKOT/arsip.png" alt="Maskot Arsip Pusaka" width="220" height="120"></div>' +
+        '<div class="confirm-dialog__body"><h2 id="confirm-dialog-title" class="confirm-dialog__title">Keluar dari akun demo?</h2>' +
+        '<p id="confirm-dialog-message" class="confirm-dialog__message"></p>' +
+        '<p id="confirm-dialog-hint" class="confirm-dialog__hint"></p></div>' +
+        '<div class="confirm-dialog__actions"><button class="button button--gold confirm-dialog__btn-ok" id="confirm-dialog-ok" type="button">Ya, Keluar</button>' +
+        '<button class="button button--quiet confirm-dialog__btn-cancel" id="confirm-dialog-cancel" type="button" data-confirm-cancel>Batal</button></div>' +
+        '</div></dialog>' +
         '<button class="chat-launcher" id="chat-launcher" type="button" aria-label="Buka Tanya Pusaka Bot" aria-expanded="false" aria-controls="chat-panel"><img class="chat-launcher__mark" src="../MASKOT/AI_CHATBOT.png" alt="" aria-hidden="true"></button>' +
         '<section class="chat-panel" id="chat-panel" aria-labelledby="chat-title" hidden><header class="chat-panel__head"><div><h2 id="chat-title">Tanya Pusaka Bot</h2><p>Jawaban berbasis pengetahuan situs ini, bukan AI umum.</p></div><button class="chat-panel__close" id="chat-close" type="button" aria-label="Tutup chatbot">×</button></header>' +
         '<div class="chat-messages" id="chat-messages" aria-live="polite"><div class="chat-message" role="article">Halo! Tanyakan tentang budaya, cara mengarsipkan, kuis, atau cerita.</div></div><div class="chat-suggestions" id="chat-suggestions"></div>' +
-        '<form class="chat-form" id="chat-form"><label class="screen-reader-only" for="chat-input">Tulis pertanyaan</label><input id="chat-input" type="text" maxlength="240" placeholder="Tulis pertanyaan…" autocomplete="off" required><button type="submit">Kirim</button></form></section>';
+        '<form class="chat-form" id="chat-form"><label class="screen-reader-only" for="chat-input">Tulis pertanyaan</label><input id="chat-input" type="text" maxlength="240" placeholder="Tulis pertanyaan…" autocomplete="off" required><button type="submit">Kirim</button></form></section>');
     }
   }
 
@@ -136,7 +212,7 @@
     if (link && link.href && link.label) {
       bubble.append(document.createTextNode(" "));
       const anchor = document.createElement("a");
-      anchor.href = link.href;
+      anchor.href = link.href.replace(/^\.\.\//, BASE);
       anchor.textContent = link.label;
       bubble.append(anchor);
     }
@@ -146,11 +222,11 @@
 
   // Jawaban chatbot berasal dari aturan demo lokal, bukan layanan AI atau backend.
   const botRules = [
-    { test: /klaim|sengketa|pengakuan|unesco|status resmi/i, text: "Pembahasan budaya sebaiknya berangkat dari dokumentasi dan sumber resmi, bukan saling menyalahkan. Status setiap tradisi perlu dicek langsung ke lembaga pencatat.", href: "../lading_page/index.html#sumber", label: "Lihat catatan sumber" },
+    { test: /klaim|sengketa|pengakuan|unesco|status resmi/i, text: "Pembahasan budaya sebaiknya berangkat dari dokumentasi dan sumber resmi, bukan saling menyalahkan. Status setiap tradisi perlu dicek langsung ke lembaga pencatat.", href: "../index.html#sumber", label: "Lihat catatan sumber" },
     { test: /batik/i, text: "Batik punya ragam teknik dan konteks daerah. Catat pembuat, asal, teknik, sumber pengetahuan, serta izin sebelum membagikan dokumentasinya.", href: "../arsip/index.html", label: "Buka Arsip" },
     { test: /angklung/i, text: "Angklung adalah alat musik bambu yang dimainkan dengan digoyangkan. Arsipkan konteks pertunjukan dan sumber penuturan secara jelas.", href: "../arsip/index.html", label: "Buka Arsip" },
     { test: /reog/i, text: "Ketika mencatat Reog, tulis lokasi, kelompok atau narasumber sesuai izin, serta rujukan yang dapat diperiksa. Hindari menyederhanakan ragam penuturan.", href: "../arsip/index.html", label: "Cara mencatat" },
-    { test: /pendet/i, text: "Tari Pendet memiliki konteks budaya dan pertunjukan yang patut dijelaskan melalui sumber yang tepat. Hindari klaim status tanpa merujuk catatan resmi.", href: "../lading_page/index.html#kasus", label: "Lihat catatan kasus" },
+    { test: /pendet/i, text: "Tari Pendet memiliki konteks budaya dan pertunjukan yang patut dijelaskan melalui sumber yang tepat. Hindari klaim status tanpa merujuk catatan resmi.", href: "../index.html#kasus", label: "Lihat catatan kasus" },
     { test: /unggah|upload|arsip|dokumen|sumber|izin|narasumber|dokumentasi|mendokumentasikan|mencatat|catat/i, text: "Masuk menggunakan nama demo, lalu isi judul, kategori, asal, deskripsi dan sumber serta centang persetujuan. Prototipe hanya menyimpan metadata di browser.", href: "../arsip/index.html", label: "Mulai mencatat" },
     { test: /login|masuk|akun|password|kata sandi/i, text: "Masuk bersifat demo. Pilih nama pengguna 3–20 karakter (huruf, angka, garis bawah). Kata sandi hanya diperiksa agar kolom tidak kosong dan tidak disimpan.", href: "#masuk", label: "Buka Masuk" },
     { test: /peringkat|skor|kuis|soal/i, text: "Satu permainan mengambil 10 pertanyaan. Skor adalah jumlah jawaban benar × 10; skor demo tersimpan hanya di browser ini. Data contoh ditandai terpisah.", href: "../kuis/index.html", label: "Coba kuis" },
@@ -163,7 +239,7 @@
     if (!match) {
       return {
         text: "Saya belum menemukan jawaban untuk topik itu. Coba tanyakan tentang Batik, Angklung, Reog, Pendet, cara mengarsipkan, kuis, atau cerita.",
-        href: "../lading_page/index.html",
+        href: "../index.html",
         label: "Kembali ke Beranda"
       };
     }
@@ -366,21 +442,61 @@
       button.addEventListener("click", function () {
         if (getSession()) {
           const session = getSession();
-          if (!window.confirm("Keluar dari akun demo @" + session.username + "?")) return;
-          try {
-            window.localStorage.removeItem(SESSION_KEY);
-          } catch (error) {
-            console.error("Tidak dapat menghapus sesi lokal Arsip Pusaka.", error);
-            notify("Sesi tidak dapat dihapus. Periksa izin penyimpanan browser.", "error");
-            return;
-          }
-          updateAccountControls();
-          notify("Anda telah keluar dari akun demo.", "success");
+          askConfirm({
+            title: "Keluar dari Akun?",
+            user: session.username,
+            hint: "Metadata arsip dan riwayat kuis tetap tersimpan di perangkat ini.",
+            okText: "Ya, Keluar",
+            cancelText: "Batal",
+            mascot: getPageMascot()
+          }).then(function (confirmed) {
+            if (!confirmed) return;
+            try {
+              window.localStorage.removeItem(SESSION_KEY);
+            } catch (error) {
+              console.error("Tidak dapat menghapus sesi lokal Arsip Pusaka.", error);
+              notify("Sesi tidak dapat dihapus. Periksa izin penyimpanan browser.", "error");
+              return;
+            }
+            updateAccountControls();
+            notify("Anda telah keluar dari akun demo.", "success");
+          });
         } else {
           accountDialog(true);
         }
       });
     });
+
+    // Event listener dialog konfirmasi maskot
+    const confirmDialogEl = document.querySelector("#confirm-dialog");
+    const confirmOkBtn = document.querySelector("#confirm-dialog-ok");
+    if (confirmDialogEl) {
+      if (confirmOkBtn) {
+        confirmOkBtn.addEventListener("click", function () {
+          confirmDialogEl.close();
+          if (confirmResolver) {
+            confirmResolver(true);
+            confirmResolver = null;
+          }
+        });
+      }
+      confirmDialogEl.querySelectorAll("[data-confirm-cancel]").forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          confirmDialogEl.close();
+        });
+      });
+      confirmDialogEl.addEventListener("close", function () {
+        if (confirmResolver) {
+          confirmResolver(false);
+          confirmResolver = null;
+        }
+      });
+      confirmDialogEl.addEventListener("click", function (event) {
+        if (event.target === confirmDialogEl) {
+          confirmDialogEl.close();
+        }
+      });
+    }
 
     document.querySelectorAll("[data-close-account]").forEach(function (button) {
       button.addEventListener("click", function () {
@@ -446,6 +562,7 @@
     accountKey: accountKey,
     getSession: getSession,
     requireAccount: requireAccount,
+    confirm: askConfirm,
     notify: notify,
     formatDate: function (value) {
       const date = new Date(value);

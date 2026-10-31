@@ -20,7 +20,7 @@ Satu alur belajar menghubungkan arsip budaya komunitas, kuis edukatif, dan cerit
 
 ## Operating Context
 
-Situs memiliki empat halaman: Beranda, Arsip, Kuis, dan Cerita Nusantara. Alur utamanya adalah Kenali → Catat → Uji → Wariskan. Pengunjung dapat menjelajahi isi tanpa akun; akun dummy membantu menghubungkan unggahan, riwayat kuis, dan cerita yang dibaca di browser yang sama.
+Situs memiliki empat halaman: Beranda (akar proyek), Arsip, Kuis, dan Cerita Nusantara. Alur utamanya adalah Kenali → Catat → Uji → Wariskan. Pengunjung dapat menjelajahi isi tanpa akun; akun dummy membantu menghubungkan unggahan, riwayat kuis, dan cerita yang dibaca di browser yang sama.
 
 ## Capabilities and Constraints
 
@@ -41,7 +41,7 @@ Nama Arsip Pusaka dan tagline “Kenali · Catat · Wariskan”. Nada netral dan
 
 ## Evidence on Hand
 
-Empat ekspor Figma HTML/CSS dan aset lokal di `lading_page`, `arsip`, `kuis`, dan `cerita`; dokumen rancangan situs Arsip Pusaka yang menjabarkan fitur, batasan, dan alur.
+Halaman statis di akar (`index.html` sebagai beranda) serta `arsip`, `kuis`, dan `cerita`; aset lokal di `aset` dan `MASKOT`; satu lembar gaya di `css`; dan skrip di `js`.
 
 ## Product Principles
 
