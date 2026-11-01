@@ -11,6 +11,60 @@
   const form = document.querySelector("#upload-form");
   let activeTab = "community";
   let activeCategory = "Semua";
+  let savingUpload = false;
+
+  // Foto unggahan diperkecil dan dikompres agar muat disimpan di browser ini.
+  const MAX_IMAGE_WIDTH = 1000;
+  const IMAGE_QUALITY = 0.72;
+  const previewBox = document.querySelector("#upload-preview");
+  const previewImage = document.querySelector("#upload-preview-image");
+  let previewUrl = "";
+
+  // Pratinjau langsung saat berkas dipilih agar foto terlihat sebelum disimpan.
+  function showFilePreview(file) {
+    if (previewUrl) {
+      URL.revokeObjectURL(previewUrl);
+      previewUrl = "";
+    }
+    if (!previewBox || !previewImage) return;
+    if (!file || !/^image\//.test(file.type)) {
+      previewBox.hidden = true;
+      previewImage.removeAttribute("src");
+      return;
+    }
+    previewUrl = URL.createObjectURL(file);
+    previewImage.src = previewUrl;
+    previewBox.hidden = false;
+  }
+
+  function fileToImage(file) {
+    return new Promise(function (resolve) {
+      if (!file || !/^image\//.test(file.type) || /svg/.test(file.type)) {
+        resolve("");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onerror = function () { resolve(""); };
+      reader.onload = function () {
+        const image = new Image();
+        image.onerror = function () { resolve(""); };
+        image.onload = function () {
+          const scale = Math.min(1, MAX_IMAGE_WIDTH / image.width);
+          const canvas = document.createElement("canvas");
+          canvas.width = Math.max(1, Math.round(image.width * scale));
+          canvas.height = Math.max(1, Math.round(image.height * scale));
+          const context = canvas.getContext("2d");
+          if (!context) { resolve(""); return; }
+          context.fillStyle = "#ffffff";
+          context.fillRect(0, 0, canvas.width, canvas.height);
+          context.drawImage(image, 0, 0, canvas.width, canvas.height);
+          resolve(canvas.toDataURL("image/jpeg", IMAGE_QUALITY));
+        };
+        image.src = reader.result;
+      };
+      reader.readAsDataURL(file);
+    });
+  }
 
   // Data arsip dimuat dari penyimpanan lokal; isi awal berasal dari data demo.
   function documents() {
@@ -46,7 +100,7 @@
       const img = document.createElement("img");
       img.className = "archive-card__image";
       img.src = item.image;
-      img.alt = "Ilustrasi " + item.title;
+      img.alt = (item.demo ? "Ilustrasi " : "Foto arsip ") + item.title;
       img.loading = "lazy";
       media.append(img);
       article.append(media);
@@ -85,7 +139,7 @@
     if (item.fileName) {
       const fileName = document.createElement("span");
       fileName.className = "archive-card__file";
-      fileName.title = "Nama berkas dicatat lokal; berkas tidak diunggah";
+      fileName.title = "Berkas asli tidak diunggah; fotonya disimpan di browser ini";
       fileName.textContent = item.fileName;
       foot.append(fileName);
     }
@@ -122,32 +176,6 @@
     return article;
   }
 
-  // Riwayat kuis akun ditampilkan sebagai salah satu isi Arsip Saya.
-  function renderScoreList(container, session) {
-    const scores = session
-      ? APP.read(APP.accountKey("arsipPusaka:quiz-history", session.username), [])
-      : [];
-    container.replaceChildren();
-    const heading = document.createElement("h3");
-    heading.textContent = "Skor kuis saya";
-    container.append(heading);
-    if (!scores.length) {
-      const message = document.createElement("p");
-      message.className = "empty-state";
-      message.textContent = "Belum ada skor. Selesaikan kuis untuk menyimpan riwayat di akun demo ini.";
-      container.append(message);
-      return;
-    }
-    const list = document.createElement("ul");
-    list.className = "quiz-review-list";
-    scores.slice().reverse().forEach(function (score) {
-      const item = document.createElement("li");
-      item.textContent = score.score + "/100 · " + score.correct + " jawaban benar · " + APP.formatTime(score.seconds) + " · " + APP.formatDate(score.date);
-      list.append(item);
-    });
-    container.append(list);
-  }
-
   // Menyelaraskan tab, filter, unggahan, dan konten arsip yang terlihat.
   function render() {
     if (!grid || !empty) return;
@@ -178,30 +206,24 @@
     empty.hidden = true;
     grid.hidden = true;
     const personalList = document.querySelector("#personal-uploads");
-    const personalScores = document.querySelector("#personal-scores");
-    personalList.hidden = document.querySelector("[data-personal-view='scores']").getAttribute("aria-selected") === "true";
-    personalScores.hidden = !personalList.hidden;
     if (!session) {
       document.querySelector("#personal-gate").hidden = false;
+      personalList.hidden = true;
       personalList.replaceChildren();
-      personalScores.replaceChildren();
       return;
     }
     document.querySelector("#personal-gate").hidden = true;
-    if (!personalList.hidden) {
-      const owned = docs.filter(function (item) {
-        return !item.demo && item.username.toLowerCase() === session.username.toLowerCase();
-      }).sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
-      personalList.replaceChildren();
-      owned.forEach(function (item) { personalList.append(renderArchiveCard(item, true)); });
-      if (!owned.length) {
-        const message = document.createElement("p");
-        message.className = "empty-state";
-        message.textContent = "Belum ada unggahan atas nama @" + session.username + ". Mulai dengan mencatat pengetahuan dari lingkunganmu.";
-        personalList.append(message);
-      }
-    } else {
-      renderScoreList(personalScores, session);
+    personalList.hidden = false;
+    const owned = docs.filter(function (item) {
+      return !item.demo && item.username.toLowerCase() === session.username.toLowerCase();
+    }).sort(function (a, b) { return new Date(b.date) - new Date(a.date); });
+    personalList.replaceChildren();
+    owned.forEach(function (item) { personalList.append(renderArchiveCard(item, true)); });
+    if (!owned.length) {
+      const message = document.createElement("p");
+      message.className = "empty-state";
+      message.textContent = "Belum ada unggahan atas nama @" + session.username + ". Mulai dengan mencatat pengetahuan dari lingkunganmu.";
+      personalList.append(message);
     }
   }
 
@@ -214,15 +236,6 @@
         activeTab = tab.dataset.archiveTab;
       }
       grid.hidden = activeTab !== "community";
-      render();
-    });
-  });
-
-  document.querySelectorAll("[data-personal-view]").forEach(function (tab) {
-    tab.addEventListener("click", function () {
-      document.querySelectorAll("[data-personal-view]").forEach(function (button) {
-        button.setAttribute("aria-selected", String(button === tab));
-      });
       render();
     });
   });
@@ -251,13 +264,15 @@
   document.querySelector("#cancel-upload").addEventListener("click", function () {
     uploadPanel.dataset.open = "false";
     form.reset();
+    showFilePreview(null);
     document.querySelector("#upload-character-count").textContent = "0 / 400 karakter";
     document.querySelector("#upload-source").setCustomValidity("");
     render();
   });
 
-  form.addEventListener("submit", function (event) {
+  form.addEventListener("submit", async function (event) {
     event.preventDefault();
+    if (savingUpload) return;
     if (!APP.requireAccount("Masuk untuk menyimpan metadata unggahan.")) return;
     if (!form.reportValidity()) return;
     const session = APP.getSession();
@@ -290,16 +305,29 @@
       document.querySelector("#upload-permission").focus();
       return;
     }
+    // Foto disimpan sebagai data URL agar langsung tampil di kartu arsip.
+    savingUpload = true;
+    const photo = file ? await fileToImage(file) : "";
+    if (photo) entry.image = photo;
+    savingUpload = false;
     const docs = documents();
     docs.push(entry);
     if (!APP.write(STORAGE_KEY, docs)) return;
     form.reset();
+    showFilePreview(null);
+    document.querySelector("#upload-character-count").textContent = "0 / 400 karakter";
     uploadPanel.dataset.open = "false";
     activeTab = "personal";
     document.querySelector("#personal-gate").hidden = true;
     grid.hidden = true;
-    APP.notify("Metadata arsip telah dicatat di browser ini. Berkas tidak dikirim ke server.", "success");
+    APP.notify(photo
+      ? "Arsip dan fotonya tersimpan di browser ini. Foto diperkecil agar hemat ruang."
+      : "Metadata arsip telah dicatat di browser ini. Berkas tidak dikirim ke server.", "success");
     render();
+  });
+
+  document.querySelector("#upload-file").addEventListener("change", function () {
+    showFilePreview(this.files[0] || null);
   });
 
   document.querySelectorAll("#upload-description, #upload-source").forEach(function (field) {

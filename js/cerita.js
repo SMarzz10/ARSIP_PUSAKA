@@ -91,6 +91,27 @@
     document.querySelector("#story-count").textContent = filtered.length + " cerita";
   }
 
+  // Panel ilustrasi reader memakai gambar sampul yang sama dengan kartu cerita.
+  function renderReaderArt(story) {
+    const art = document.querySelector("#reader-stage");
+    const letter = document.querySelector("#reader-letter");
+    let image = art.querySelector(".story-reader__image");
+    if (story.image) {
+      if (!image) {
+        image = document.createElement("img");
+        image.className = "story-reader__image";
+        art.prepend(image);
+      }
+      image.src = story.image;
+      image.alt = "Sampul cerita " + story.title;
+      letter.hidden = true;
+      return;
+    }
+    if (image) image.remove();
+    letter.hidden = false;
+    letter.textContent = story.title.charAt(0);
+  }
+
   // Reader memperbarui satu babak, sumber, makna, dan kontrol navigasi.
   function renderReader() {
     if (!activeStory) return;
@@ -100,7 +121,7 @@
     document.querySelector("#reader-position").textContent = "Babak " + (activeChapter + 1) + " dari " + activeStory.chapters.length;
     document.querySelector("#reader-progress").max = activeStory.chapters.length;
     document.querySelector("#reader-progress").value = activeChapter + 1;
-    document.querySelector("#reader-letter").textContent = activeStory.title.charAt(0);
+    renderReaderArt(activeStory);
     document.querySelector("#reader-chapter").textContent = activeStory.chapters[activeChapter];
     document.querySelector("#reader-meaning").hidden = !isLast;
     document.querySelector("#reader-sources").replaceChildren();
@@ -123,7 +144,9 @@
     activeChapter = chapter;
     renderReader();
     if (!reader.open) reader.showModal();
-    document.querySelector("#reader-next").focus();
+    // Dialog selalu dibuka dari judul cerita, bukan dari posisi fokus terakhir.
+    reader.scrollTop = 0;
+    document.querySelector("#reader-next").focus({ preventScroll: true });
   }
 
   function moveChapter(direction) {
@@ -133,7 +156,7 @@
     activeChapter = next;
     renderReader();
     const nextButton = document.querySelector("#reader-next");
-    (nextButton.hidden ? document.querySelector("#reader-back") : nextButton).focus();
+    (nextButton.hidden ? document.querySelector("#reader-back") : nextButton).focus({ preventScroll: true });
   }
 
   function finishReading() {

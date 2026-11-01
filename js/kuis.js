@@ -212,6 +212,36 @@
     }
   }
 
+  // Riwayat skor ditampilkan di halaman kuis, bukan di Arsip Saya.
+  function historyKey(session) {
+    return session ? APP.accountKey("arsipPusaka:quiz-history", session.username) : "arsipPusaka:quiz-history:guest";
+  }
+
+  function renderHistory() {
+    const list = document.querySelector("#quiz-history-list");
+    const note = document.querySelector("#quiz-history-note");
+    if (!list) return;
+    const session = APP.getSession();
+    const history = APP.read(historyKey(session), []).slice().reverse();
+    if (note) {
+      note.textContent = session
+        ? "Sepuluh percobaan terakhir untuk akun @" + session.username + ", tersimpan di perangkat ini."
+        : "Sepuluh percobaan terakhir sebagai tamu, tersimpan di perangkat ini. Masuk agar skor tercatat pada akun demo.";
+    }
+    list.replaceChildren();
+    if (!history.length) {
+      const item = document.createElement("li");
+      item.textContent = "Belum ada skor. Selesaikan satu ronde kuis untuk melihat riwayatmu di sini.";
+      list.append(item);
+      return;
+    }
+    history.slice(0, 10).forEach(function (record) {
+      const item = document.createElement("li");
+      item.textContent = record.score + "/100 · " + record.correct + " dari " + (record.roundSize || 10) + " jawaban benar · " + APP.formatTime(record.seconds) + " · " + APP.formatDate(record.date);
+      list.append(item);
+    });
+  }
+
   // Siklus kuis: mulai ronde, simpan hasil, lalu tampilkan peringkat.
   function startQuiz() {
     round = sampleRound();
@@ -280,6 +310,7 @@
     ui.stage.hidden = true;
     ui.result.hidden = false;
     renderLeaderboard();
+    renderHistory();
   }
 
   document.querySelector("#start-quiz").addEventListener("click", startQuiz);
@@ -292,6 +323,10 @@
     }
   });
   document.querySelector("#play-again").addEventListener("click", startQuiz);
-  document.addEventListener("arsip:authchange", renderLeaderboard);
+  document.addEventListener("arsip:authchange", function () {
+    renderLeaderboard();
+    renderHistory();
+  });
   renderLeaderboard();
+  renderHistory();
 })();

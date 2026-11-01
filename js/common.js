@@ -203,7 +203,14 @@
     }
   }
 
-  function appendChatMessage(text, kind, link) {
+  // Tautan jawaban bot mengikuti halaman asal: akar ("") atau subfolder ("../").
+  function chatHref(href) {
+    if (!href) return null;
+    if (/^(https?:|mailto:|#)/.test(href)) return href;
+    return BASE + href.replace(/^\.\//, "");
+  }
+
+  function appendChatMessage(text, kind, link, meta) {
     const messages = document.querySelector("#chat-messages");
     const bubble = document.createElement("div");
     bubble.className = "chat-message" + (kind === "user" ? " chat-message--user" : "");
@@ -212,38 +219,75 @@
     if (link && link.href && link.label) {
       bubble.append(document.createTextNode(" "));
       const anchor = document.createElement("a");
-      anchor.href = link.href.replace(/^\.\.\//, BASE);
+      anchor.href = chatHref(link.href);
       anchor.textContent = link.label;
       bubble.append(anchor);
+    }
+    // Sumber dan status verifikasi ditampilkan kecil di bawah jawaban.
+    if (meta && meta.source) {
+      const source = document.createElement("span");
+      source.className = "chat-message__source";
+      source.textContent = "Sumber: " + meta.source + (meta.verif === false ? " · perlu dicek ulang" : "");
+      bubble.append(source);
     }
     messages.append(bubble);
     messages.scrollTop = messages.scrollHeight;
   }
 
-  // Jawaban chatbot berasal dari aturan demo lokal, bukan layanan AI atau backend.
-  const botRules = [
-    { test: /klaim|sengketa|pengakuan|unesco|status resmi/i, text: "Pembahasan budaya sebaiknya berangkat dari dokumentasi dan sumber resmi, bukan saling menyalahkan. Status setiap tradisi perlu dicek langsung ke lembaga pencatat.", href: "../index.html#sumber", label: "Lihat catatan sumber" },
-    { test: /batik/i, text: "Batik punya ragam teknik dan konteks daerah. Catat pembuat, asal, teknik, sumber pengetahuan, serta izin sebelum membagikan dokumentasinya.", href: "../arsip/index.html", label: "Buka Arsip" },
-    { test: /angklung/i, text: "Angklung adalah alat musik bambu yang dimainkan dengan digoyangkan. Arsipkan konteks pertunjukan dan sumber penuturan secara jelas.", href: "../arsip/index.html", label: "Buka Arsip" },
-    { test: /reog/i, text: "Ketika mencatat Reog, tulis lokasi, kelompok atau narasumber sesuai izin, serta rujukan yang dapat diperiksa. Hindari menyederhanakan ragam penuturan.", href: "../arsip/index.html", label: "Cara mencatat" },
-    { test: /pendet/i, text: "Tari Pendet memiliki konteks budaya dan pertunjukan yang patut dijelaskan melalui sumber yang tepat. Hindari klaim status tanpa merujuk catatan resmi.", href: "../index.html#kasus", label: "Lihat catatan kasus" },
-    { test: /unggah|upload|arsip|dokumen|sumber|izin|narasumber|dokumentasi|mendokumentasikan|mencatat|catat/i, text: "Masuk menggunakan nama demo, lalu isi judul, kategori, asal, deskripsi dan sumber serta centang persetujuan. Prototipe hanya menyimpan metadata di browser.", href: "../arsip/index.html", label: "Mulai mencatat" },
-    { test: /login|masuk|akun|password|kata sandi/i, text: "Masuk bersifat demo. Pilih nama pengguna 3–20 karakter (huruf, angka, garis bawah). Kata sandi hanya diperiksa agar kolom tidak kosong dan tidak disimpan.", href: "#masuk", label: "Buka Masuk" },
-    { test: /peringkat|skor|kuis|soal/i, text: "Satu permainan mengambil 10 pertanyaan. Skor adalah jumlah jawaban benar × 10; skor demo tersimpan hanya di browser ini. Data contoh ditandai terpisah.", href: "../kuis/index.html", label: "Coba kuis" },
-    { test: /versi|ragam|daerah/i, text: "Satu cerita tutur dapat memiliki ragam versi di daerah dan keluarga yang berbeda. Catat versi, asal, sumber, serta izin narasumber; jangan menyebut satu versi sebagai satu-satunya yang sah.", href: "../cerita/index.html", label: "Jelajahi Cerita Nusantara" },
-    { test: /cerita|legenda|dongeng|mitos|fabel|baca/i, text: "Cerita Nusantara berisi versi demo ringkas dengan penanda bahwa sumber dan narasumber lokal perlu diverifikasi sebelum publikasi.", href: "../cerita/index.html", label: "Jelajahi cerita" }
-  ];
+  // Jawaban chatbot berasal dari mesin aturan lokal (chatbot-engine.js) dan
+  // basis pengetahuan (chatbot-data.js). Tidak ada API maupun AI generatif.
+  const BOT_FALLBACK = "Maaf, saya belum paham pertanyaan itu. Coba tanyakan tentang cara mengunggah dokumen, kuis, cerita rakyat, klaim budaya, pengakuan UNESCO, atau budaya seperti Batik, Angklung, Reog, dan Pendet.";
 
-  function answerBot(question) {
-    const match = botRules.find(function (rule) { return rule.test.test(question); });
-    if (!match) {
-      return {
-        text: "Saya belum menemukan jawaban untuk topik itu. Coba tanyakan tentang Batik, Angklung, Reog, Pendet, cara mengarsipkan, kuis, atau cerita.",
-        href: "../index.html",
-        label: "Kembali ke Beranda"
-      };
+  function botAnswer(question) {
+    if (typeof jawab !== "function") {
+      return { text: BOT_FALLBACK, link: null, source: "", verif: true, suggestions: [] };
     }
-    return match;
+    const result = jawab(question);
+    return {
+      text: result.jawaban,
+      link: result.tautan,
+      source: result.sumber,
+      verif: result.verif,
+      suggestions: result.saran || []
+    };
+  }
+
+  function botTopic(id) {
+    if (typeof KB === "undefined") return null;
+    const entry = KB.find(function (item) { return item.id === id; });
+    return entry ? { id: entry.id, topik: entry.topik } : null;
+  }
+
+  function starterSuggestions() {
+    if (typeof SARAN_AWAL === "undefined") return [];
+    return SARAN_AWAL.map(botTopic).filter(Boolean);
+  }
+
+  // Tombol saran diisi topik dari basis pengetahuan, bukan teks bebas.
+  function renderChatSuggestions(items) {
+    const box = document.querySelector("#chat-suggestions");
+    if (!box) return;
+    box.replaceChildren();
+    (items || []).forEach(function (item) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "chat-suggestion";
+      button.textContent = item.topik;
+      button.addEventListener("click", function () { askTopic(item); });
+      box.append(button);
+    });
+  }
+
+  // Menjawab langsung dari id entri agar tombol saran selalu memberi jawaban tepat.
+  function askTopic(item) {
+    appendChatMessage(item.topik, "user");
+    const result = typeof jawabById === "function" ? jawabById(item.id) : null;
+    if (!result) {
+      appendChatMessage(BOT_FALLBACK, "bot");
+      return;
+    }
+    appendChatMessage(result.jawaban, "bot", result.tautan, { source: result.sumber, verif: result.verif });
+    renderChatSuggestions(result.saran || []);
   }
 
   function initChatbot() {
@@ -254,25 +298,7 @@
     const input = document.querySelector("#chat-input");
     if (!launcher || !panel || !form) return;
 
-    const suggestionsByPage = {
-      arsip: ["Bagaimana cara mengunggah?", "Mengapa sumber dan izin penting?"],
-      kuis: ["Bagaimana aturan skor?", "Apakah peringkat ini sungguhan?"],
-      cerita: ["Rekomendasikan cerita", "Apa arti versi daerah?"],
-      beranda: ["Bagaimana cara mendokumentasikan?", "Bagaimana kerja akun demo?"]
-    };
-    const page = document.body.dataset.page || "beranda";
-    const suggestionBox = document.querySelector("#chat-suggestions");
-    (suggestionsByPage[page] || suggestionsByPage.beranda).forEach(function (suggestion) {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "chat-suggestion";
-      button.textContent = suggestion;
-      button.addEventListener("click", function () {
-        input.value = suggestion;
-        form.requestSubmit();
-      });
-      suggestionBox.append(button);
-    });
+    renderChatSuggestions(starterSuggestions());
 
     launcher.addEventListener("click", function () {
       panel.hidden = !panel.hidden;
@@ -293,8 +319,9 @@
       }
       appendChatMessage(question, "user");
       input.value = "";
-      const answer = answerBot(question);
-      appendChatMessage(answer.text, "bot", { href: answer.href, label: answer.label });
+      const answer = botAnswer(question);
+      appendChatMessage(answer.text, "bot", answer.link, { source: answer.source, verif: answer.verif });
+      renderChatSuggestions(answer.suggestions);
     });
   }
 
