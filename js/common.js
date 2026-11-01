@@ -328,7 +328,10 @@
   // Animasi dimulai saat elemen memasuki viewport; konten baru ikut diamati.
   function initScrollReveals() {
     const revealSelector = [
-      ".hero__copy",
+      ".hero__eyebrow",
+      ".hero__title",
+      ".hero__lead",
+      ".hero__actions",
       ".page-hero__copy",
       "main .section-heading",
       "main .stats",
