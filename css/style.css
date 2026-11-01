@@ -2237,6 +2237,7 @@ body[data-page="arsip"] .page-hero__copy {
 }
 
 .story-card__art {
+  position: relative;
   display: flex;
   min-height: 142px;
   align-items: flex-end;
@@ -2246,11 +2247,41 @@ body[data-page="arsip"] .page-hero__copy {
   background: var(--card-surface);
 }
 
+.story-card__art--image {
+  min-height: 190px;
+  padding: 14px 18px;
+  color: #fff;
+  background: #182d2a;
+}
+
+.story-card__art--image .story-card__letter {
+  display: none;
+}
+
+.story-card__art--image::after {
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.62));
+  content: "";
+}
+
+.story-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .story-card__letter {
+  position: relative;
+  z-index: 1;
   font: 400 76px/0.85 var(--font-display);
 }
 
 .story-card__region {
+  position: relative;
+  z-index: 1;
   max-width: 15ch;
   font-size: 11px;
   text-align: right;

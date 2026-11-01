@@ -46,7 +46,7 @@ window.ARSIP_DATA = {
   // Cerita ringkas yang disarikan dari "Kumpulan Cerita Rakyat Nusantara" (PDF).
   stories: [
     {
-      id: "malin-kundang", title: "Malin Kundang", type: "Legenda", region: "Sumatera Barat", version: "Versi ringkas yang dikenal di Sumatera Barat", minutes: 4,
+      id: "malin-kundang", title: "Malin Kundang", type: "Legenda", region: "Sumatera Barat", version: "Versi ringkas yang dikenal di Sumatera Barat", minutes: 4, image: "foto_cerita/malinkundang.jpeg",
       summary: "Anak nelayan merantau dan menjadi saudagar kaya, lalu malu mengakui ibunya sendiri.",
       chapters: [
         "Dahulu, di sebuah desa nelayan di pesisir Sumatera Barat, hiduplah seorang janda miskin bersama anak laki-lakinya yang bernama Malin Kundang. Mereka hidup sederhana. Setiap hari ibunya bekerja keras agar Malin bisa makan dan tumbuh sehat.",
@@ -58,7 +58,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 3 — Malin Kundang, legenda Sumatera Barat.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "sangkuriang", title: "Sangkuriang", type: "Legenda", region: "Jawa Barat", version: "Versi ringkas yang dikenal di Jawa Barat", minutes: 4,
+      id: "sangkuriang", title: "Sangkuriang", type: "Legenda", region: "Jawa Barat", version: "Versi ringkas yang dikenal di Jawa Barat", minutes: 4, image: "foto_cerita/sangkurinang.jpeg",
       summary: "Pemuda yang jatuh cinta pada ibunya sendiri dan gagal memenuhi syarat mustahil sebelum fajar.",
       chapters: [
         "Pada zaman dahulu di tanah Pasundan, hiduplah seorang putri cantik bernama Dayang Sumbi. Suatu hari, ketika sedang menenun, alat tenunnya terjatuh. Karena malas turun, ia berucap bahwa siapa pun yang mengambilkannya, jika perempuan akan dijadikan saudara, dan jika laki-laki akan dijadikan suami. Seekor anjing bernama Tumang mengambilkan alat tenun itu. Karena janjinya, Dayang Sumbi pun menikah dengan Tumang, yang sebenarnya adalah dewa yang dikutuk menjadi anjing. Dari pernikahan itu lahirlah seorang anak laki-laki bernama Sangkuriang.",
@@ -70,7 +70,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 4 — Sangkuriang, legenda Jawa Barat.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "timun-mas", title: "Timun Mas", type: "Dongeng", region: "Jawa Tengah", version: "Versi ringkas yang dikenal di Jawa", minutes: 4,
+      id: "timun-mas", title: "Timun Mas", type: "Dongeng", region: "Jawa Tengah", version: "Versi ringkas yang dikenal di Jawa", minutes: 4, image: "foto_cerita/timunmas.jpeg",
       summary: "Gadis yang lahir dari timun emas melarikan diri dari raksasa dengan empat bekal ajaib.",
       chapters: [
         "Dahulu hiduplah seorang janda tua bernama Mbok Sirni yang sangat ingin memiliki anak. Suatu hari, ia bertemu raksasa yang memberinya biji timun. Raksasa itu berpesan agar biji tersebut ditanam, dan bila sudah dewasa, anak yang lahir akan diserahkan kepadanya untuk dimakan.",
@@ -82,7 +82,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 5 — Timun Mas, dongeng Jawa Tengah.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "kancil-buaya", title: "Kancil dan Buaya", type: "Fabel", region: "Nusantara", version: "Cerita rakyat yang beredar di banyak daerah", minutes: 3,
+      id: "kancil-buaya", title: "Kancil dan Buaya", type: "Fabel", region: "Nusantara", version: "Cerita rakyat yang beredar di banyak daerah", minutes: 3, image: "foto_cerita/kancildanbuaya.jpeg",
       summary: "Kancil menyeberangi sungai dengan mengelabui para buaya yang berbaris rapi.",
       chapters: [
         "Pada suatu musim kemarau, hutan menjadi sangat kering. Kancil merasa lapar dan haus. Di seberang sungai terdapat kebun yang penuh buah-buahan segar, tetapi sungai itu dihuni banyak buaya yang lapar.",
@@ -94,7 +94,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 6 — Kancil dan Buaya, fabel Nusantara.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "roro-jonggrang", title: "Roro Jonggrang", type: "Legenda", region: "Jawa Tengah & DIY", version: "Kisah yang hidup di sekitar Prambanan", minutes: 4,
+      id: "roro-jonggrang", title: "Roro Jonggrang", type: "Legenda", region: "Jawa Tengah & DIY", version: "Kisah yang hidup di sekitar Prambanan", minutes: 4, image: "foto_cerita/rorojongrang.jpeg",
       summary: "Syarat seribu candi dalam semalam dilanggar dengan tipu daya, dan berakhir pada sebuah arca.",
       chapters: [
         "Dahulu, Kerajaan Prambanan dipimpin oleh Prabu Baka, seorang raja yang kuat. Kerajaan Pengging yang bertetangga dengannya dipimpin Raja Damar Moyo, yang memiliki putra gagah bernama Bandung Bondowoso. Dalam sebuah peperangan, Bandung Bondowoso berhasil mengalahkan Prabu Baka.",
@@ -106,7 +106,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 7 — Roro Jonggrang, legenda Jawa Tengah & DIY.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "danau-toba", title: "Asal Mula Danau Toba", type: "Legenda", region: "Sumatera Utara", version: "Cerita tentang keluarga, janji, dan asal sebuah danau besar", minutes: 4,
+      id: "danau-toba", title: "Asal Mula Danau Toba", type: "Legenda", region: "Sumatera Utara", version: "Cerita tentang keluarga, janji, dan asal sebuah danau besar", minutes: 4, image: "foto_cerita/danautoba.jpeg",
       summary: "Janji yang dilanggar dalam amarah melahirkan sebuah danau luas dan Pulau Samosir.",
       chapters: [
         "Dahulu, di sebuah lembah subur di Sumatera Utara, hiduplah seorang petani bernama Toba. Ia hidup sendiri dan bekerja keras mengolah ladang serta memancing ikan di sungai.",
@@ -118,7 +118,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 8 — Asal Mula Danau Toba, legenda Sumatera Utara.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "bawang-merah-putih", title: "Bawang Merah dan Bawang Putih", type: "Dongeng", region: "Nusantara", version: "Dongeng yang beredar dalam banyak versi", minutes: 4,
+      id: "bawang-merah-putih", title: "Bawang Merah dan Bawang Putih", type: "Dongeng", region: "Nusantara", version: "Dongeng yang beredar dalam banyak versi", minutes: 4, image: "foto_cerita/bawangmerah.jpeg",
       summary: "Kebaikan hati Bawang Putih berbuah emas, sementara keserakahan Bawang Merah berbuah celaka.",
       chapters: [
         "Dahulu, di sebuah desa, hiduplah seorang gadis baik hati bernama Bawang Putih bersama ayahnya. Setelah ibunya meninggal, ayahnya menikah lagi dengan seorang janda yang membawa putri bernama Bawang Merah. Awalnya semua tampak baik-baik saja. Setelah ayah Bawang Putih meninggal, ibu tiri dan Bawang Merah menunjukkan sifat asli mereka. Bawang Putih dipaksa mengerjakan semua pekerjaan rumah, mulai dari memasak, mencuci, hingga membersihkan rumah, sementara Bawang Merah hanya bermalas-malasan.",
@@ -130,7 +130,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 9 — Bawang Merah dan Bawang Putih, dongeng Nusantara.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "batu-menangis", title: "Batu Menangis", type: "Legenda", region: "Kalimantan Barat", version: "Versi ringkas yang dikenal di Kalimantan Barat", minutes: 3,
+      id: "batu-menangis", title: "Batu Menangis", type: "Legenda", region: "Kalimantan Barat", version: "Versi ringkas yang dikenal di Kalimantan Barat", minutes: 3, image: "foto_cerita/batumenangis.jpeg",
       summary: "Anak yang malu mengakui ibunya berubah menjadi batu yang menangis.",
       chapters: [
         "Dahulu, di sebuah desa terpencil di Kalimantan Barat, hiduplah seorang janda miskin bersama putrinya yang cantik. Sayangnya, sang anak berperangai buruk. Ia pemalas, suka berhias, dan sering memerintah ibunya dengan kasar.",
@@ -142,7 +142,7 @@ window.ARSIP_DATA = {
       sources: ["Kumpulan Cerita Rakyat Nusantara (PDF), hlm. 10 — Batu Menangis, legenda Kalimantan Barat.", "Versi tutur di berbagai daerah dapat berbeda; narasumber dan izin perlu dicatat sebelum publikasi."]
     },
     {
-      id: "nyi-roro-kidul", title: "Nyi Roro Kidul", type: "Mitos", region: "Jawa Tengah & DIY", version: "Sketsa; ragam tutur pesisir perlu diverifikasi", minutes: 3,
+      id: "nyi-roro-kidul", title: "Nyi Roro Kidul", type: "Mitos", region: "Jawa Tengah & DIY", version: "Sketsa; ragam tutur pesisir perlu diverifikasi", minutes: 3, image: "foto_cerita/nyirorokidul.jpeg",
       summary: "Mitos penguasa laut selatan dengan beragam tutur asal-usulnya di pesisir Jawa.",
       chapters: [
         "Nyi Roro Kidul dikenal dalam kepercayaan Jawa sebagai penguasa laut selatan, yang membentang di sepanjang pesisir selatan Pulau Jawa. Sosoknya digambarkan sebagai perempuan cantik yang berkuasa atas samudra dan makhluk-makhluknya.",

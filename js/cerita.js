@@ -25,6 +25,15 @@
     article.className = "story-card";
     const art = document.createElement("div");
     art.className = "story-card__art";
+    if (story.image) {
+      art.classList.add("story-card__art--image");
+      const image = document.createElement("img");
+      image.className = "story-card__image";
+      image.src = story.image;
+      image.alt = "Ilustrasi " + story.title;
+      image.loading = "lazy";
+      art.append(image);
+    }
     const letter = document.createElement("span");
     letter.className = "story-card__letter";
     letter.setAttribute("aria-hidden", "true");
