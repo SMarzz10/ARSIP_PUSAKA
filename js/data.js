@@ -3,12 +3,84 @@ window.ARSIP_DATA = {
   categories: ["Tari", "Musik", "Kerajinan", "Bahasa & Aksara", "Kuliner", "Upacara"],
   // Data contoh untuk demonstrasi katalog; tandai sebagai fiktif di antarmuka.
   archiveItems: [
-    { id: "demo-angklung", title: "Angklung Buhun di Kampung Adat", category: "Musik", origin: "Lebak, Banten", description: "Catatan tentang fungsi angklung dalam siklus pertanian masyarakat Baduy.", source: "Wawancara dan catatan komunitas — contoh untuk prototipe.", username: "jejak_kita", date: "2026-10-12", demo: true, image: "foto_arsip/Angklung Buhun di Kampung Adat.jpeg" },
-    { id: "demo-batik", title: "Motif Batik Sekar Jagad", category: "Kerajinan", origin: "Yogyakarta", description: "Dokumentasi awal tentang ragam motif dan cara masyarakat menjelaskannya.", source: "Catatan komunitas — contoh; rujukan khusus perlu diverifikasi.", username: "larasbumi", date: "2026-10-10", demo: true, image: "foto_arsip/Motif Batik Sekar Jagad.jpeg" },
-    { id: "demo-seren-taun", title: "Tradisi Seren Taun", category: "Upacara", origin: "Kuningan, Jawa Barat", description: "Ringkasan rangkaian syukur panen dalam tradisi setempat.", source: "Catatan kebudayaan daerah — contoh untuk prototipe.", username: "aksara27", date: "2026-10-08", demo: true, image: "foto_arsip/Tradisi Seren Taun.jpeg" },
-    { id: "demo-lontara", title: "Aksara Lontara", category: "Bahasa & Aksara", origin: "Sulawesi Selatan", description: "Pengenalan bentuk dan penggunaan aksara tradisional Bugis-Makassar.", source: "Bahan ajar komunitas — contoh; rujukan khusus perlu diverifikasi.", username: "sanggar_sore", date: "2026-10-04", demo: true, image: "foto_arsip/Aksara Lontara.jpeg" },
-    { id: "demo-saman", title: "Tari Saman", category: "Tari", origin: "Gayo Lues, Aceh", description: "Catatan pola gerak, kebersamaan, dan pewarisan tari.", source: "UNESCO dan catatan komunitas — entri khusus perlu diverifikasi.", username: "ratih_nusa", date: "2026-10-01", demo: true, image: "foto_arsip/Tari Saman.jpeg" },
-    { id: "demo-papeda", title: "Papeda dan Cara Mengolahnya", category: "Kuliner", origin: "Papua & Maluku", description: "Catatan pengolahan sagu dan konteks makan bersama.", source: "Penuturan keluarga — contoh; izin dan narasumber perlu diverifikasi.", username: "dapur_timur", date: "2026-09-29", demo: true, image: "foto_arsip/Papeda dan Cara Mengolahnya.jpeg" }
+    {
+      id: "demo-angklung",
+      title: "Angklung Buhun di Kampung Adat",
+      category: "Musik",
+      origin: "Lebak, Banten",
+      description: "Catatan tentang fungsi angklung dalam siklus pertanian masyarakat Baduy.",
+      fullDescription: "Angklung Buhun adalah jenis angklung kuno yang menjadi bagian tak terpisahkan dari ritual masyarakat Baduy di Banten. Berbeda dengan angklung modern yang menggunakan tangga nada diatonis, Angklung Buhun menggunakan tangga nada pentatonis kuno. \n\nAlat musik ini hanya dimainkan pada waktu-waktu tertentu, terutama saat ritual menanam padi (Ngaseuk). Masyarakat Baduy percaya bahwa bunyi angklung adalah bentuk penghormatan kepada Dewi Sri (Dewi Padi) agar memberikan hasil panen yang melimpah. Pembuatannya pun tidak sembarangan, bambu harus ditebang pada hari tertentu dan melalui proses pengeringan alami yang panjang untuk menghasilkan resonansi suara yang sakral.",
+      source: "Wawancara dan catatan komunitas — contoh untuk prototipe.",
+      username: "jejak_kita",
+      date: "2026-10-12",
+      demo: true,
+      image: "foto_arsip/Angklung_Buhun_di_Kampung_Adat.jpeg"
+    },
+    {
+      id: "demo-batik",
+      title: "Motif Batik Sekar Jagad",
+      category: "Kerajinan",
+      origin: "Yogyakarta",
+      description: "Dokumentasi awal tentang ragam motif dan cara masyarakat menjelaskannya.",
+      fullDescription: "Motif Sekar Jagad merupakan salah satu motif batik pedalaman (Batik Keraton) yang sangat populer di Yogyakarta dan Solo. Nama 'Sekar Jagad' secara harfiah berarti 'Bunga Dunia'. Motif ini menggambarkan keragaman budaya dan keindahan dunia yang menyatu dalam keharmonisan.\n\nVisual motif ini menyerupai pulau-pulau yang dipisahkan oleh garis-garis lengkung, di mana setiap 'pulau' berisi motif batik yang berbeda seperti ceplok, parang, atau nitik. Filosofi di baliknya adalah bahwa perbedaan bukanlah alasan untuk terpecah, melainkan kekayaan yang membuat dunia menjadi indah saat bersatu. Batik dengan motif ini biasanya digunakan dalam acara-acara resmi atau pernikahan sebagai simbol kewibawaan dan keanggunan.",
+      source: "Catatan komunitas — contoh; rujukan khusus perlu diverifikasi.",
+      username: "larasbumi",
+      date: "2026-10-10",
+      demo: true,
+      image: "foto_arsip/Motif_Batik_Sekar_Jagad.jpeg"
+    },
+    {
+      id: "demo-seren-taun",
+      title: "Tradisi Seren Taun",
+      category: "Upacara",
+      origin: "Kuningan, Jawa Barat",
+      description: "Ringkasan rangkaian syukur panen dalam tradisi setempat.",
+      fullDescription: "Seren Taun adalah upacara adat panen padi masyarakat Sunda yang dirayakan setiap tahun. Di Kuningan, Jawa Barat, ritual ini berpusat di Gedung Cigugur. Makna utama dari Seren Taun adalah perwujudan syukur kepada Tuhan atas hasil bumi yang diperoleh selama setahun terakhir, sekaligus doa untuk musim tanam mendatang.\n\nPuncak acara ditandai dengan prosesi 'Ngajaya', yaitu iring-iringan membawa padi untuk ditumbuk bersama di dalam lesung (lesung massal). Bunyi tumbukan padi menciptakan irama musik yang khas dan meriah. Selain sebagai ritual syukur, Seren Taun juga menjadi ajang silaturahmi antarwarga dan pelestarian kesenian daerah seperti angklung badut, tari buyung, dan pencak silat.",
+      source: "Catatan kebudayaan daerah — contoh untuk prototipe.",
+      username: "aksara27",
+      date: "2026-10-08",
+      demo: true,
+      image: "foto_arsip/Tradisi_Seren_Taun.jpeg"
+    },
+    {
+      id: "demo-lontara",
+      title: "Aksara Lontara",
+      category: "Bahasa & Aksara",
+      origin: "Sulawesi Selatan",
+      description: "Pengenalan bentuk dan penggunaan aksara tradisional Bugis-Makassar.",
+      fullDescription: "Aksara Lontara adalah sistem tulisan tradisional masyarakat Bugis dan Makassar di Sulawesi Selatan. Nama 'Lontara' berasal dari kata 'lontar', karena catatan-catatan sejarah (Attoriolong) dan hukum adat (Ade') dulunya ditulis di atas daun lontar.\n\nAksara ini memiliki bentuk yang unik, bersudut-sudut tajam, dan didasarkan pada filosofi segi empat yang melambangkan empat elemen alam: api, air, angin, dan tanah. Penggunaannya tidak hanya untuk keperluan administratif, tetapi juga untuk menulis karya sastra epik terbesar di dunia, I La Galigo. Meskipun saat ini alfabet latin lebih dominan, Lontara tetap diajarkan di sekolah-sekolah di Sulawesi Selatan sebagai bagian vital dari identitas budaya lokal.",
+      source: "Bahan ajar komunitas — contoh; rujukan khusus perlu diverifikasi.",
+      username: "sanggar_sore",
+      date: "2026-10-04",
+      demo: true,
+      image: "foto_arsip/Aksara_Lontara.jpeg"
+    },
+    {
+      id: "demo-saman",
+      title: "Tari Saman",
+      category: "Tari",
+      origin: "Gayo Lues, Aceh",
+      description: "Catatan pola gerak, kebersamaan, dan pewarisan tari.",
+      fullDescription: "Tari Saman adalah salah satu tarian tradisional paling ikonik dari masyarakat Gayo di Aceh. Keunikan utamanya terletak pada penggunaan suara penarinya sebagai iringan musik, bukan alat musik eksternal. Para penari duduk berbaris rapat dan melakukan gerakan tangan, badan, serta kepala secara sinkron dengan kecepatan yang terus meningkat.\n\nTarian ini melambangkan kekompakan, kegigihan, dan nilai-nilai keagamaan. Saman biasanya dibawakan oleh laki-laki, meskipun saat ini terdapat variasi yang dibawakan perempuan (Saman Ratoh Jaroe). Karena keunikan dan nilai budayanya yang tinggi, UNESCO menetapkan Tari Saman sebagai Warisan Budaya Takbenda pada tahun 2011, menjadikannya salah satu kebanggaan nasional Indonesia di mata dunia.",
+      source: "UNESCO dan catatan komunitas — entri khusus perlu diverifikasi.",
+      username: "ratih_nusa",
+      date: "2026-10-01",
+      demo: true,
+      image: "foto_arsip/Tari_Saman.jpeg"
+    },
+    {
+      id: "demo-papeda",
+      title: "Papeda dan Cara Mengolahnya",
+      category: "Kuliner",
+      origin: "Papua & Maluku",
+      description: "Catatan pengolahan sagu dan konteks makan bersama.",
+      fullDescription: "Papeda adalah makanan pokok masyarakat di wilayah pesisir Papua dan Maluku yang terbuat dari sagu. Teksturnya kenyal, bening, dan lengket seperti lem. Papeda biasanya disajikan dengan ikan kuah kuning yang kaya rempah dan sayur ganemo untuk memberikan rasa segar dan pedas.\n\nCara memakan papeda pun unik, yaitu dengan digulung menggunakan sepasang sumpit kayu atau bambu yang disebut 'gata-gata'. Di balik kelezatannya, papeda memiliki nilai filosofis 'Helai Mbay Hote Mbay', yang berarti makan dalam satu wadah sebagai simbol kebersamaan dan kekeluargaan yang erat. Sagu sendiri merupakan pohon kehidupan bagi masyarakat timur Indonesia, di mana satu pohon sagu dapat menghidupi sebuah keluarga untuk waktu yang cukup lama.",
+      source: "Penuturan keluarga — contoh; izin dan narasumber perlu diverifikasi.",
+      username: "dapur_timur",
+      date: "2026-09-29",
+      demo: true,
+      image: "foto_arsip/Papeda_dan_Cara_Mengolahnya.jpeg"
+    }
   ],
   // Bank soal lokal beserta jawaban dan penjelasan setiap pilihan.
   quizQuestions: [

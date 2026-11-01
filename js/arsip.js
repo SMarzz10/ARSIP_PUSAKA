@@ -9,6 +9,9 @@
   const panel = document.querySelector("#archive-personal");
   const uploadPanel = document.querySelector("#upload-panel");
   const form = document.querySelector("#upload-form");
+  const detailDialog = document.querySelector("#archive-detail");
+  const detailClose = document.querySelector("#detail-close");
+  const detailCloseBtn = document.querySelector("#detail-close-btn");
   let activeTab = "community";
   let activeCategory = "Semua";
   let savingUpload = false;
@@ -80,7 +83,11 @@
       const original = DATA.archiveItems.find(function (demo) { return demo.id === item.id; });
       if (original && original.image && item.image !== original.image) {
         updated = true;
-        return Object.assign({}, item, { image: original.image });
+        item.image = original.image;
+      }
+      if (original && original.fullDescription && item.fullDescription !== original.fullDescription) {
+        updated = true;
+        item.fullDescription = original.fullDescription;
       }
       return item;
     });
@@ -131,6 +138,13 @@
     const source = document.createElement("p");
     source.className = "field__hint";
     source.textContent = "Sumber: " + item.source;
+    
+    const readMore = document.createElement("button");
+    readMore.type = "button";
+    readMore.className = "archive-card__read-more";
+    readMore.textContent = "Selengkapnya";
+    readMore.addEventListener("click", function () { openArchiveDetail(item); });
+
     const foot = document.createElement("div");
     foot.className = "archive-card__foot";
     const date = document.createElement("span");
@@ -148,7 +162,8 @@
       remove.type = "button";
       remove.textContent = "Hapus";
       remove.setAttribute("aria-label", "Hapus unggahan " + item.title);
-      remove.addEventListener("click", function () {
+      remove.addEventListener("click", function (e) {
+        e.stopPropagation();
         const session = APP.getSession();
         if (!session) return;
         APP.confirm({
@@ -171,9 +186,38 @@
       });
       foot.append(remove);
     }
-    body.append(top, title, description, meta, source, foot);
+    body.append(top, title, description, meta, source, readMore, foot);
     article.append(body);
     return article;
+  }
+
+  function openArchiveDetail(item) {
+    if (!detailDialog) return;
+    document.querySelector("#detail-category").textContent = item.category;
+    document.querySelector("#detail-title").textContent = item.title;
+    document.querySelector("#detail-meta").textContent = item.origin + " · @" + item.username;
+    document.querySelector("#detail-description").textContent = item.fullDescription || item.description;
+    document.querySelector("#detail-source").textContent = item.source;
+    document.querySelector("#detail-date").textContent = "Diarsipkan pada " + APP.formatDate(item.date);
+    
+    const fileEl = document.querySelector("#detail-file");
+    fileEl.textContent = item.fileName ? "Berkas: " + item.fileName : "";
+    
+    const media = document.querySelector("#detail-media");
+    media.replaceChildren();
+    if (item.image) {
+      const img = document.createElement("img");
+      img.className = "archive-detail__image";
+      img.src = item.image;
+      img.alt = item.title;
+      media.append(img);
+      media.hidden = false;
+    } else {
+      media.hidden = true;
+    }
+    
+    detailDialog.showModal();
+    detailDialog.scrollTop = 0;
   }
 
   // Menyelaraskan tab, filter, unggahan, dan konten arsip yang terlihat.
@@ -251,6 +295,18 @@
   });
   document.querySelector("#archive-search").addEventListener("input", render);
 
+  if (detailClose) {
+    detailClose.addEventListener("click", function () { detailDialog.close(); });
+  }
+  if (detailCloseBtn) {
+    detailCloseBtn.addEventListener("click", function () { detailDialog.close(); });
+  }
+  if (detailDialog) {
+    detailDialog.addEventListener("click", function (event) {
+      if (event.target === detailDialog) detailDialog.close();
+    });
+  }
+
   document.querySelector("#open-upload").addEventListener("click", function () {
     if (!APP.requireAccount("Masuk diperlukan sebelum metadata arsip dapat disimpan.")) return;
     uploadPanel.dataset.open = String(uploadPanel.dataset.open !== "true");
@@ -292,6 +348,7 @@
       category: document.querySelector("#upload-category").value,
       origin: document.querySelector("#upload-origin").value.trim(),
       description: description.value.trim(),
+      fullDescription: document.querySelector("#upload-full-description").value.trim(),
       source: source.value.trim(),
       username: session.username,
       date: new Date().toISOString(),

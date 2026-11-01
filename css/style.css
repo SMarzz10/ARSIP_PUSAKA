@@ -1663,6 +1663,135 @@ body[data-page="arsip"] .page-hero__copy {
   white-space: nowrap;
 }
 
+.archive-card__read-more {
+  width: 100%;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: var(--ink);
+  color: var(--paper-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.archive-card__read-more:hover {
+  background: var(--gold-dark);
+  transform: translateY(-1px);
+}
+
+.archive-card__read-more:active {
+  transform: translateY(0);
+}
+
+/* Archive Detail Dialog */
+#archive-detail {
+  max-width: 900px;
+  width: 90%;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-lg);
+  background: var(--paper-light);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.archive-detail__content {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 24px 0;
+}
+
+.archive-detail__media {
+  width: 100%;
+  background: #f0ede4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.archive-detail__image {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  display: block;
+}
+
+.archive-detail__info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.archive-detail__description {
+  font-size: clamp(15px, 2vw, 17px);
+  line-height: 1.65;
+  color: var(--ink);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.archive-detail__source-box {
+  padding: 20px;
+  background: rgba(24, 45, 42, 0.04);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--radius-sm);
+}
+
+.archive-detail__source-box strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  color: var(--ink-soft);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.archive-detail__source-box p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.archive-detail__foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+
+@media (min-width: 768px) {
+  .archive-detail__content {
+    flex-direction: row;
+    align-items: stretch;
+  }
+  
+  .archive-detail__media {
+    flex: 1.2;
+    min-height: 400px;
+  }
+  
+  .archive-detail__info {
+    flex: 1;
+    max-height: 600px;
+    overflow-y: auto;
+    padding-right: 12px;
+  }
+}
+
 .empty-state {
   padding: 30px;
   border-radius: var(--radius-md);
